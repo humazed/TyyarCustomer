@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <bitmap android:src="@drawable/ic_attachment_black_24dp" android:alpha="@dimen/inactive_icon_alpha" />
+    </item>
+    <item android:state_pressed="true">
+        <bitmap android:src="@drawable/ic_attachment_black_24dp" android:alpha="@dimen/active_icon_alpha" />
+    </item>
+    <item android:state_focused="true">
+        <bitmap android:src="@drawable/ic_attachment_black_24dp" android:alpha="@dimen/active_icon_alpha" />
+    </item>
+    <item>
+        <bitmap android:src="@drawable/ic_attachment_black_24dp" android:alpha="@dimen/active_icon_alpha" />
+    </item>
+</selector>
