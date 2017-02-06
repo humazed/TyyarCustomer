@@ -16,9 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MenuCategoryActivity">
+        <activity android:name=".activities.MenuCategoriesActivity">
         </activity>
-        <activity android:name=".activities.MenuCategoryDetailsActivity">
+        <activity android:name=".activities.MenuCategoryItemsActivity">
         </activity>
         <activity android:name=".activities.ChartActivity">
         </activity>

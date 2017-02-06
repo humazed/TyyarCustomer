@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/row_container"
+    style="@style/SelectableItemBackground"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginStart="16dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item_name_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="Checken"
+            android:textSize="18sp"
+            android:textStyle="normal|bold"/>
+
+        <TextView
+            android:id="@+id/item_description_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tomato, onion"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/item_price_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="6dp"
+        android:padding="6dp"
+        android:text="$5.00"
+        android:textStyle="normal|bold"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/linearLayout"
+        android:layout_marginTop="6dp"
+        android:background="@color/border_gray"/>
+</RelativeLayout>

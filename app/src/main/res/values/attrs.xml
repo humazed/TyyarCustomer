@@ -8,24 +8,6 @@
     <attr name="strokeWidth" format="dimension"/>
     <attr name="title" format="string"/>
     <attr name="unselectedColor" format="color"/>
-    <!--
-        <attr name="navigationMode">
-            <enum name="listMode" value="1" />
-            <enum name="normal" value="0" />
-            <enum name="tabMode" value="2" />
-        </attr>
-    -->
-    <!--
-        <attr name="displayOptions">
-            <flag name="disableHome" value="0x00000020" />
-            <flag name="homeAsUp" value="0x00000004" />
-            <flag name="none" value="0x00000000" />
-            <flag name="showCustom" value="0x00000010" />
-            <flag name="showHome" value="0x00000002" />
-            <flag name="showTitle" value="0x00000008" />
-            <flag name="useLogo" value="0x00000001" />
-        </attr>
-    -->
     <attr name="subtitle" format="string"/>
     <attr name="titleTextStyle" format="reference"/>
     <attr name="subtitleTextStyle" format="reference"/>
@@ -191,14 +173,6 @@
     <attr name="layout_behavior" format="string"/>
     <attr name="layout_anchor" format="reference"/>
     <attr name="layout_keyline" format="integer"/>
-    <attr name="windowTransitionStyle">
-        <enum name="none" value="2"/>
-        <enum name="slide" value="1"/>
-    </attr>
-    <attr name="toolbarTextColorStyle">
-        <enum name="dark" value="2"/>
-        <enum name="light" value="1"/>
-    </attr>
     <attr name="bottomSheetDialogTheme" format="reference"/>
     <attr name="bottomSheetStyle" format="reference"/>
     <attr name="textColorError" format="color"/>
@@ -385,28 +359,7 @@
     <attr name="vpiTitlePageIndicatorStyle" format="reference"/>
     <attr name="vpiTabPageIndicatorStyle" format="reference"/>
     <attr name="vpiUnderlinePageIndicatorStyle" format="reference"/>
-    <attr name="appTheme">
-        <enum name="holo_dark" value="0"/>
-        <enum name="holo_light" value="1"/>
-    </attr>
-    <attr name="environment">
-        <enum name="production" value="1"/>
-        <enum name="sandbox" value="0"/>
-        <enum name="strict_sandbox" value="2"/>
-        <enum name="test" value="3"/>
-    </attr>
     <attr name="fragmentStyle" format="reference"/>
-    <attr name="maskedWalletDetailsTextAppearance" format="reference"/>
-    <attr name="maskedWalletDetailsHeaderTextAppearance" format="reference"/>
-    <attr name="maskedWalletDetailsBackground" format="reference|color"/>
-    <attr name="maskedWalletDetailsLogoTextColor" format="color"/>
-    <attr name="maskedWalletDetailsLogoImageType">
-        <enum name="classic" value="1"/>
-        <enum name="google_wallet_classic" value="1"/>
-        <enum name="google_wallet_monochrome" value="2"/>
-        <enum name="monochrome" value="2"/>
-        <enum name="android_pay" value="3"/>
-    </attr>
     <attr name="anchor">
         <enum name="bottom_left" value="2"/>
         <enum name="bottom_right" value="3"/>

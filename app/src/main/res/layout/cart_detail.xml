@@ -10,12 +10,12 @@
     android:paddingTop="8.0dip">
 
     <RelativeLayout
-        android:id="@id/subtotal_container"
+        android:id="@+id/subtotal_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@id/subtotal_label"
+            android:id="@+id/subtotal_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
@@ -27,7 +27,7 @@
             android:textSize="16.0sp"/>
 
         <TextView
-            android:id="@id/subtotal_cost"
+            android:id="@+id/subtotal_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -41,12 +41,12 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@id/taxes_and_fees_container"
+        android:id="@+id/taxes_and_fees_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@id/taxes_label"
+            android:id="@+id/taxes_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
@@ -57,7 +57,7 @@
             android:textSize="16.0sp"/>
 
         <TextView
-            android:id="@id/taxes_cost"
+            android:id="@+id/taxes_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -71,12 +71,12 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@id/delivery_container"
+        android:id="@+id/delivery_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@id/delivery_label"
+            android:id="@+id/delivery_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
@@ -88,7 +88,7 @@
             android:textSize="16.0sp"/>
 
         <TextView
-            android:id="@id/delivery_cost"
+            android:id="@+id/delivery_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -100,7 +100,7 @@
             android:textSize="16.0sp"/>
 
         <TextView
-            android:id="@id/delivery_original_cost"
+            android:id="@+id/delivery_original_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/delivery_cost"
@@ -113,12 +113,12 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@id/discount_info_container"
+        android:id="@+id/discount_info_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@id/discount_label"
+            android:id="@+id/discount_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
@@ -130,7 +130,7 @@
             android:textSize="16.0sp"/>
 
         <TextView
-            android:id="@id/discount_cost"
+            android:id="@+id/discount_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -144,12 +144,12 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@id/service_fee_container"
+        android:id="@+id/service_fee_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@id/service_fee_label"
+            android:id="@+id/service_fee_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
@@ -161,7 +161,7 @@
             android:textSize="16.0sp"/>
 
         <ImageView
-            android:id="@id/service_fee_icon"
+            android:id="@+id/service_fee_icon"
             android:layout_width="20.0dip"
             android:layout_height="20.0dip"
             android:layout_centerVertical="true"
@@ -170,7 +170,7 @@
             android:paddingRight="16.0dip"/>
 
         <TextView
-            android:id="@id/service_fee_cost"
+            android:id="@+id/service_fee_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -184,12 +184,12 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@id/extra_order_fee_container"
+        android:id="@+id/extra_order_fee_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@id/extra_order_fee_label"
+            android:id="@+id/extra_order_fee_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
@@ -201,7 +201,7 @@
             android:textSize="16.0sp"/>
 
         <ImageView
-            android:id="@id/extra_order_fee_icon"
+            android:id="@+id/extra_order_fee_icon"
             android:layout_width="20.0dip"
             android:layout_height="20.0dip"
             android:layout_centerVertical="true"
@@ -210,7 +210,7 @@
             android:paddingRight="16.0dip"/>
 
         <TextView
-            android:id="@id/extra_order_fee_cost"
+            android:id="@+id/extra_order_fee_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -224,12 +224,12 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@id/tip_info_container"
+        android:id="@+id/tip_info_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@id/tip_label"
+            android:id="@+id/tip_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
@@ -241,7 +241,7 @@
             android:textSize="16.0sp"/>
 
         <TextView
-            android:id="@id/tip_cost"
+            android:id="@+id/tip_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -254,12 +254,12 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@id/total_container"
+        android:id="@+id/total_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@id/total_label"
+            android:id="@+id/total_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
@@ -271,7 +271,7 @@
             android:textSize="16.0sp"/>
 
         <TextView
-            android:id="@id/total_cost"
+            android:id="@+id/total_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
