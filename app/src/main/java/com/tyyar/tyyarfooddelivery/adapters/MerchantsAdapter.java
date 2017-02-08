@@ -43,7 +43,7 @@ public class MerchantsAdapter extends BaseQuickAdapter<Merchant, BaseViewHolder>
     protected void convert(BaseViewHolder viewHolder, Merchant merchant) {
         ButterKnife.bind(this, viewHolder.getConvertView());
         Glide.with(mContext)
-                .load(Uri.parse(merchant.logoImageUri()))
+                .load(Uri.parse(merchant.logoImageUrl()))
                 .placeholder(R.drawable.placeholder)
                 .into(mMerchantLogoImage);
 

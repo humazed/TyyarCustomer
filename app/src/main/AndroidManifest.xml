@@ -22,7 +22,7 @@
         </activity>
         <activity android:name=".activities.ChartActivity">
         </activity>
-        <activity android:name=".activities.ItemOrderActivity">
+        <activity android:name=".activities.OrderItemActivity">
         </activity>
     </application>
 

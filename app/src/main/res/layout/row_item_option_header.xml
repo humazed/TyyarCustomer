@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="48.0dip"
+    android:background="@color/background_gray">
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_alignParentTop="true"
+        android:background="@color/border_gray"/>
+
+    <TextView
+        android:id="@+id/header_title"
+        android:text="header_title"
+        style="@style/AppBaseTheme.RobotoMedium.SmallSize.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="40.0dip"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="8.0dip"
+        android:gravity="center_vertical"
+        android:paddingLeft="16.0dip"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16.0dip"
+        android:layout_marginTop="8.0dip">
+
+        <TextView
+            android:id="@+id/header_description"
+            style="@style/AppBaseTheme.RobotoMedium.XSmallSize.Subtitle"
+            android:text="header_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:paddingLeft="2.0dip"
+            android:paddingRight="2.0dip"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_alignParentBottom="true"
+        android:background="@color/border_gray"/>
+</RelativeLayout>

@@ -7,7 +7,7 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.tyyar.tyyarfooddelivery.R;
-import com.tyyar.tyyarfooddelivery.activities.ItemOrderActivity;
+import com.tyyar.tyyarfooddelivery.activities.OrderItemActivity;
 
 import java.util.List;
 
@@ -36,7 +36,7 @@ public class MenuCategoryDetailsAdapter extends BaseQuickAdapter<String, BaseVie
 
         mDishName.setText(item);
 
-        mRowContainer.setOnClickListener(v -> mContext.startActivity(new Intent(mContext, ItemOrderActivity.class)));
+        mRowContainer.setOnClickListener(v -> mContext.startActivity(new Intent(mContext, OrderItemActivity.class)));
 
     }
 }

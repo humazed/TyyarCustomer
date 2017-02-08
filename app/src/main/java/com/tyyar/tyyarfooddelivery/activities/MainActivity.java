@@ -32,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
         UiUtils.showDrawer(this, mToolbar).setSelection(1, false);
 
         ArrayList<Merchant> merchants = new ArrayList<Merchant>() {{
-            add(Merchant.create("Burger king", "Headquartered ", "file:///android_asset/abouShakra.png"));
-            add(Merchant.create("Cook Door", "Sandwiches, Fast Food", "file:///android_asset/ArabiataAlShabrawy.png"));
-            add(Merchant.create("Farroga ", "Oriental ,Sandwiches ,Grills", "file:///android_asset/BobSushi.jpg"));
-            add(Merchant.create("Papa John", "pizza", "file:///android_asset/Burger king .png"));
-            add(Merchant.create("Arabiata Al", "Sandwiches and Oriental food", "file:///android_asset/Canton.jpg"));
-            add(Merchant.create("Bob Sushi", "Japanese Food", "file:///android_asset/Cook Door.png"));
-            add(Merchant.create("Iskandarany ", "Fast Food, Grills, Oriental ,Pasta , Sandwiches", "file:///android_asset/Farroga.png"));
+//            add(Merchant.create("Burger king", "Headquartered ", "file:///android_asset/abouShakra.png"));
+//            add(Merchant.create("Cook Door", "Sandwiches, Fast Food", "file:///android_asset/ArabiataAlShabrawy.png"));
+//            add(Merchant.create("Farroga ", "Oriental ,Sandwiches ,Grills", "file:///android_asset/BobSushi.jpg"));
+//            add(Merchant.create("Papa John", "pizza", "file:///android_asset/Burger king .png"));
+//            add(Merchant.create("Arabiata Al", "Sandwiches and Oriental food", "file:///android_asset/Canton.jpg"));
+//            add(Merchant.create("Bob Sushi", "Japanese Food", "file:///android_asset/Cook Door.png"));
+//            add(Merchant.create("Iskandarany ", "Fast Food, Grills, Oriental ,Pasta , Sandwiches", "file:///android_asset/Farroga.png"));
         }};
 
 
