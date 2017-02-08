@@ -4,7 +4,7 @@ import android.os.Parcelable;
 
 import com.google.auto.value.AutoValue;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * User: YourPc
@@ -22,10 +22,10 @@ public abstract class Request implements Parcelable, BaseItem {
 
     public abstract long pickUpTime();
 
-    public abstract List<Order> orders();
+    public abstract ArrayList<Order> orders();
 
 
-    public static Request create(String _ID, String customerName, String customerPhone, String driverID, long pickUpTime, List<Order> orders) {return new AutoValue_Request(_ID, customerName, customerPhone, driverID, pickUpTime, orders);}
+    public static Request create(String _ID, String customerName, String customerPhone, String driverID, long pickUpTime, ArrayList<Order> orders) {return new AutoValue_Request(_ID, customerName, customerPhone, driverID, pickUpTime, orders);}
 
 
 }

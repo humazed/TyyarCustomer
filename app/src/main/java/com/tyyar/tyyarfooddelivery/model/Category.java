@@ -4,7 +4,7 @@ import android.os.Parcelable;
 
 import com.google.auto.value.AutoValue;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * User: YourPc
@@ -13,10 +13,11 @@ import java.util.List;
 
 @AutoValue
 public abstract class Category implements Parcelable, BaseItem {
-    public abstract String _ID();
+    public abstract String name();
 
-    public abstract List<Item> items();
+    public abstract ArrayList<Item> items();
 
-    public static Category create(String _ID, List<Item> items) {return new AutoValue_Category(_ID, items);}
+    public static Category create(String _ID, String name, ArrayList<Item> items) {return new AutoValue_Category(_ID, name, items);}
+
 
 }

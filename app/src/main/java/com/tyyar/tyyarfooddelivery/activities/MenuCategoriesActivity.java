@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 
 import com.tyyar.tyyarfooddelivery.R;
 import com.tyyar.tyyarfooddelivery.adapters.MenuCategoriesAdapter;
+import com.tyyar.tyyarfooddelivery.adapters.MerchantsAdapter;
+import com.tyyar.tyyarfooddelivery.model.Category;
 import com.tyyar.tyyarfooddelivery.utils.UiUtils;
 
 import java.util.ArrayList;
@@ -28,19 +30,10 @@ public class MenuCategoriesActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         UiUtils.showDrawer(this, mToolbar).setSelection(1, false);
 
+        ArrayList<Category> menu = getIntent().getParcelableArrayListExtra(MerchantsAdapter.KEY_MENU);
+
         mCategoriesRecycler.setLayoutManager(new LinearLayoutManager(this));
-        mCategoriesRecycler.setAdapter(new MenuCategoriesAdapter(new ArrayList<String>() {{
-            add("Soups");
-            add("Salads");
-            add("Main Dishes");
-            add("Grilled Chicken And Shish Tawook");
-            add("Veal Corner");
-            add("Mutton Corner");
-            add("Kofta, Sausage And Liver");
-            add("Casseroles");
-            add("Platters");
-            add("Meals");
-        }}));
+        mCategoriesRecycler.setAdapter(new MenuCategoriesAdapter(menu));
 
     }
 }

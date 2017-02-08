@@ -4,7 +4,7 @@ import android.os.Parcelable;
 
 import com.google.auto.value.AutoValue;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * User: YourPc
@@ -20,10 +20,11 @@ public abstract class Order implements Parcelable, BaseItem {
 
     public abstract String itemID();
 
-    public abstract List<String> choicesIDs();
+    public abstract ArrayList<String> choicesIDs();
 
     public abstract String instructions();
 
 
+    public static Order create(String _ID, int count, int orderNumber, String itemID, ArrayList<String> choicesIDs, String instructions) {return new AutoValue_Order(_ID, count, orderNumber, itemID, choicesIDs, instructions);}
 
 }

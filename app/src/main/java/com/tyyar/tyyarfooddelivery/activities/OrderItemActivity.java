@@ -9,6 +9,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.tyyar.tyyarfooddelivery.R;
+import com.tyyar.tyyarfooddelivery.adapters.MenuCategoryDetailsAdapter;
+import com.tyyar.tyyarfooddelivery.model.Item;
 import com.tyyar.tyyarfooddelivery.utils.UiUtils;
 
 import butterknife.BindView;
@@ -29,10 +31,13 @@ public class OrderItemActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_item);
-
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
         UiUtils.showDrawer(this, mToolbar).setSelection(1, false);
+
+
+        Item item = getIntent().getParcelableExtra(MenuCategoryDetailsAdapter.KEY_ITEM);
+
 
 
     }

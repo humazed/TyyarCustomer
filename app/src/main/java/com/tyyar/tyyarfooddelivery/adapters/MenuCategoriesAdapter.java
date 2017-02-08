@@ -8,6 +8,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.tyyar.tyyarfooddelivery.R;
 import com.tyyar.tyyarfooddelivery.activities.MenuCategoryItemsActivity;
+import com.tyyar.tyyarfooddelivery.model.Category;
 
 import java.util.List;
 
@@ -19,25 +20,30 @@ import butterknife.ButterKnife;
  * Date: 1/27/2017
  */
 
-public class MenuCategoriesAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
+public class MenuCategoriesAdapter extends BaseQuickAdapter<Category, BaseViewHolder> {
     private static final String TAG = MenuCategoriesAdapter.class.getSimpleName();
+    public static final String KEY_CATEGORY = "categoryKey";
 
     @BindView(R.id.menu_category_name) TextView mMenuCategoryName;
     @BindView(R.id.menu_category_count) TextView mMenuCategoryCount;
     @BindView(R.id.row_container) RelativeLayout mRowContainer;
 
 
-    public MenuCategoriesAdapter(List<String> categories) {
+    public MenuCategoriesAdapter(List<Category> categories) {
         super(R.layout.row_menu_category, categories);
     }
 
     @Override
-    protected void convert(BaseViewHolder viewHolder, String category) {
+    protected void convert(BaseViewHolder viewHolder, Category category) {
         ButterKnife.bind(this, viewHolder.getConvertView());
 
-        mMenuCategoryName.setText(category);
+        mMenuCategoryName.setText(category.name());
         mMenuCategoryCount.setText("7");
 
-        mRowContainer.setOnClickListener(v -> mContext.startActivity(new Intent(mContext, MenuCategoryItemsActivity.class)));
+        mRowContainer.setOnClickListener(v -> {
+            Intent intent = new Intent(mContext, MenuCategoryItemsActivity.class);
+            intent.putParcelableArrayListExtra(KEY_CATEGORY, category.items());
+            mContext.startActivity(intent);
+        });
     }
 }

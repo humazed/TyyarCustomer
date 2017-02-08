@@ -21,7 +21,7 @@ public abstract class Choice implements Parcelable, BaseItem {
 
     public abstract boolean addToPrice();
 
-    public static Choice create(String _ID, String name, String description, double price, boolean available, boolean addToPrice) {return new AutoValue_Choice(_ID, name, description, price, available, addToPrice);}
 
+    public static Choice create(String _ID, String name, String description, double price, boolean available, boolean addToPrice) {return new AutoValue_Choice(_ID, name, description, price, available, addToPrice);}
 
 }

@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 import com.google.auto.value.AutoValue;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * User: YourPc
@@ -25,12 +25,12 @@ public abstract class Profile implements Parcelable, BaseItem {
 
     public abstract String logoImageUrl();
 
-    public abstract List<Location> locationsList();
+    public abstract ArrayList<Location> locationsList();
 
-    public abstract List<Review> reviews();
+    public abstract ArrayList<Review> reviews();
 
 
-    public static Profile create(String _ID, String name, String password, String email, String phone, String logoImageUrl, List<Location> locationsList, List<Review> reviews) {return new AutoValue_Profile(_ID, name, password, email, phone, logoImageUrl, locationsList, reviews);}
+    public static Profile create(String _ID, String name, String password, String email, String phone, String logoImageUrl, ArrayList<Location> locationsList, ArrayList<Review> reviews) {return new AutoValue_Profile(_ID, name, password, email, phone, logoImageUrl, locationsList, reviews);}
 
 
 }

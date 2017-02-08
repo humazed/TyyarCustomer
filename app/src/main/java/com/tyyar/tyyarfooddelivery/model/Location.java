@@ -17,5 +17,6 @@ public abstract class Location implements Parcelable, BaseItem {
 
     public abstract String address();
 
+
     public static Location create(String _ID, double longitude, double latitude, String address) {return new AutoValue_Location(_ID, longitude, latitude, address);}
 }

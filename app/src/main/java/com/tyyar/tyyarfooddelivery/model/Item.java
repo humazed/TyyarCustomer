@@ -4,7 +4,7 @@ import android.os.Parcelable;
 
 import com.google.auto.value.AutoValue;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * User: YourPc
@@ -23,9 +23,10 @@ public abstract class Item implements Parcelable, BaseItem {
 
     public abstract boolean avaliable();
 
-    public abstract List<Option> options();
+    public abstract ArrayList<Option> options();
 
-    public static Item create(String _ID, String name, String description, String imageUrl, boolean avaliable, List<Option> options) {return new AutoValue_Item(_ID, name, description, imageUrl, avaliable, options);}
+
+    public static Item create(String _ID, String name, String description, String imageUrl, boolean avaliable, ArrayList<Option> options) {return new AutoValue_Item(_ID, name, description, imageUrl, avaliable, options);}
 
 
 }

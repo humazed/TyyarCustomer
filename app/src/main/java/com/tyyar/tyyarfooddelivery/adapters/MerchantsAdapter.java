@@ -25,6 +25,7 @@ import butterknife.ButterKnife;
 
 public class MerchantsAdapter extends BaseQuickAdapter<Merchant, BaseViewHolder> {
     private static final String TAG = MerchantsAdapter.class.getSimpleName();
+    public static final String KEY_MENU = "menuKey";
 
     @BindView(R.id.merchant_logo_image) ImageView mMerchantLogoImage;
     @BindView(R.id.merchant_item_status) TextView mMerchantItemStatus;
@@ -52,6 +53,10 @@ public class MerchantsAdapter extends BaseQuickAdapter<Merchant, BaseViewHolder>
         mMerchantDeliveryEta.setText(merchant.deliveryETA());
         mMerchantDeliveryFee.setText(merchant.deliveryFee());
 
-        mRowContainer.setOnClickListener(v -> mContext.startActivity(new Intent(mContext, MenuCategoriesActivity.class)));
+        mRowContainer.setOnClickListener(v -> {
+            Intent intent = new Intent(mContext, MenuCategoriesActivity.class);
+            intent.putParcelableArrayListExtra(KEY_MENU, merchant.menu());
+            mContext.startActivity(intent);
+        });
     }
 }

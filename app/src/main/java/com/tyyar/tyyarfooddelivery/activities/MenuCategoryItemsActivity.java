@@ -7,7 +7,9 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import com.tyyar.tyyarfooddelivery.R;
+import com.tyyar.tyyarfooddelivery.adapters.MenuCategoriesAdapter;
 import com.tyyar.tyyarfooddelivery.adapters.MenuCategoryDetailsAdapter;
+import com.tyyar.tyyarfooddelivery.model.Item;
 import com.tyyar.tyyarfooddelivery.utils.UiUtils;
 
 import java.util.ArrayList;
@@ -29,14 +31,10 @@ public class MenuCategoryItemsActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         UiUtils.showDrawer(this, mToolbar).setSelection(1, false);
 
+        ArrayList<Item> items = getIntent().getParcelableArrayListExtra(MenuCategoriesAdapter.KEY_CATEGORY);
+
         mRecycler.setLayoutManager(new LinearLayoutManager(this));
-        mRecycler.setAdapter(new MenuCategoryDetailsAdapter(new ArrayList<String>() {{
-            add("Neapolitan Pizza");
-            add("Chicago Pizza");
-            add("Sicilian Pizza");
-            add("New York Style Pizza");
-            add("Greek Pizza");
-        }}));
+        mRecycler.setAdapter(new MenuCategoryDetailsAdapter(items));
 
 
     }

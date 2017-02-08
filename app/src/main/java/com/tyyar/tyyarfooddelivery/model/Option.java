@@ -4,7 +4,7 @@ import android.os.Parcelable;
 
 import com.google.auto.value.AutoValue;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * User: YourPc
@@ -18,9 +18,9 @@ public abstract class Option implements Parcelable, BaseItem {
 
     public abstract boolean required();
 
-    public abstract List<Choice> choices();
+    public abstract ArrayList<Choice> choices();
 
-    public static Option create(String _ID, String name, boolean required, List<Choice> choices) {return new AutoValue_Option(_ID, name, required, choices);}
 
+    public static Option create(String _ID, String name, boolean required, ArrayList<Choice> choices) {return new AutoValue_Option(_ID, name, required, choices);}
 
 }
