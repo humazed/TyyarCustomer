@@ -1,5 +1,7 @@
 package com.tyyar.tyyarfooddelivery;
 
+import android.support.annotation.NonNull;
+
 import com.tyyar.tyyarfooddelivery.model.Category;
 import com.tyyar.tyyarfooddelivery.model.Choice;
 import com.tyyar.tyyarfooddelivery.model.Item;
@@ -20,26 +22,21 @@ public class DataServer {
     public static List<Merchant> getMerchants() {
         Location location = Location.create("1", 13.000, 13.1512, "outside the lala");
 
-        ArrayList<Choice> choices = new ArrayList<Choice>() {{
-            add(Choice.create("1", "Big", "Big man", 11, true, true));
-            add(Choice.create("1", "Big", "Big man", 11, true, true));
-            add(Choice.create("1", "Big", "Big man", 11, true, true));
-        }};
-
         ArrayList<Option> options = new ArrayList<Option>() {{
-            add(Option.create("1", "Size", true, choices));
-            add(Option.create("1", "Size", true, choices));
-            add(Option.create("1", "Size", true, choices));
+            add(Option.create("1", "Size _REQ_", true, true, getChoices(1)));
+            add(Option.create("2", "Size", false, true, getChoices2(2)));
+            add(Option.create("2", "Size", false, false, getChoices2(2)));
+            add(Option.create("3", "Size", false, false, getChoices2(3)));
         }};
 
         ArrayList<Item> items = new ArrayList<Item>() {{
-            add(Item.create("1", "Neapolitan Pizza", "a very good pizza", "file:///android_asset/abouShakra.png", true, options));
-            add(Item.create("1", "Chicago Pizza", "a very good pizza", "file:///android_asset/abouShakra.png", true, options));
-            add(Item.create("1", "Sicilian Pizza", "a very good pizza", "file:///android_asset/abouShakra.png", true, options));
-            add(Item.create("1", "New York Style Pizza", "a very good pizza", "file:///android_asset/abouShakra.png", true, options));
-            add(Item.create("1", "Greek Pizza", "a very good pizza", "file:///android_asset/abouShakra.png", true, options));
-            add(Item.create("1", "Greek Pizza", "a very good pizza", "file:///android_asset/abouShakra.png", true, options));
-            add(Item.create("1", "Greek Pizza", "a very good pizza", "file:///android_asset/abouShakra.png", true, options));
+            add(Item.create("1", "Neapolitan Pizza", "a very good pizza", 1.12, "file:///android_asset/abouShakra.png", true, options));
+            add(Item.create("1", "Chicago Pizza", "a very good pizza", 2.13, "file:///android_asset/abouShakra.png", true, options));
+            add(Item.create("1", "Sicilian Pizza", "a very good pizza", 3.14, "file:///android_asset/abouShakra.png", true, options));
+            add(Item.create("1", "New York Style Pizza", "a very good pizza", 4.15, "file:///android_asset/abouShakra.png", true, options));
+            add(Item.create("1", "Greek Pizza", "a very good pizza", 5.16, "file:///android_asset/abouShakra.png", true, options));
+            add(Item.create("1", "Greek Pizza", "a very good pizza", 6.17, "file:///android_asset/abouShakra.png", true, options));
+            add(Item.create("1", "Greek Pizza", "a very good pizza", 7.18, "file:///android_asset/abouShakra.png", true, options));
         }};
 
         ArrayList<Category> categories = new ArrayList<Category>() {{
@@ -57,7 +54,7 @@ public class DataServer {
         }};
 
         return new ArrayList<Merchant>() {{
-            add(Merchant.create("1", "Cook Door", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/abouShakra.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
+            add(Merchant.create("1", "Cook Doora", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/abouShakra.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
             add(Merchant.create("2", "Farroga ", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/ArabiataAlShabrawy.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
             add(Merchant.create("3", "Papa John", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/BobSushi.jpg", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
             add(Merchant.create("4", "Arabiata Al", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/Burger king .png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
@@ -66,6 +63,24 @@ public class DataServer {
             add(Merchant.create("7", "Burger king", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/abouShakra.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
             add(Merchant.create("8", "Burger king", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/abouShakra.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
             add(Merchant.create("9", "Burger king", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/abouShakra.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
+        }};
+    }
+
+    @NonNull
+    private static ArrayList<Choice> getChoices(int id) {
+        return new ArrayList<Choice>() {{
+            add(Choice.create(id + "_1", "Big", "Big man", 10, true, false));
+            add(Choice.create(id + "_2", "Big", "Big man", 20, true, false));
+            add(Choice.create(id + "_3", "Big", "Big man", 50, true, false));
+        }};
+    }
+
+    @NonNull
+    private static ArrayList<Choice> getChoices2(int id) {
+        return new ArrayList<Choice>() {{
+            add(Choice.create(id + "_1", "Big", "Big man", 5, true, true));
+            add(Choice.create(id + "_2", "Big", "Big man", 5, true, true));
+            add(Choice.create(id + "_3", "Big", "Big man", 5, true, true));
         }};
     }
 }

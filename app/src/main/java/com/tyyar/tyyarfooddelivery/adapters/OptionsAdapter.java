@@ -1,17 +1,27 @@
 package com.tyyar.tyyarfooddelivery.adapters;
 
+import android.widget.CheckBox;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
 import com.chad.library.adapter.base.BaseSectionQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.chad.library.adapter.base.entity.SectionEntity;
 import com.tyyar.tyyarfooddelivery.R;
-import com.tyyar.tyyarfooddelivery.model.Order;
+import com.tyyar.tyyarfooddelivery.model.Choice;
 
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class OptionsAdapter extends BaseSectionQuickAdapter<OptionsAdapter.OrderSection, BaseViewHolder> {
     private static final String TAG = OptionsAdapter.class.getSimpleName();
+
+    @BindView(R.id.row_container) LinearLayout mRowContainer;
+    @BindView(R.id.option_name_textView) TextView mOptionNameTextView;
+    @BindView(R.id.option_description_textView) TextView mOptionDescriptionTextView;
+    @BindView(R.id.checkBox) CheckBox mCheckBox;
 
 
     public OptionsAdapter(List<OrderSection> orderSections) {
@@ -21,7 +31,17 @@ public class OptionsAdapter extends BaseSectionQuickAdapter<OptionsAdapter.Order
     @Override
     protected void convert(BaseViewHolder helper, OrderSection item) {
         ButterKnife.bind(this, helper.getConvertView());
-        Order order = item.getOrder();
+        Choice choice = item.getChoice();
+
+        mOptionNameTextView.setText(choice.name());
+        mOptionDescriptionTextView.setText(choice.description());
+        mCheckBox.setText(mContext.getString(R.string.common_price, choice.price()));
+
+        helper.addOnClickListener(R.id.checkBox);
+
+        mCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+
+        });
 
     }
 
@@ -38,19 +58,18 @@ public class OptionsAdapter extends BaseSectionQuickAdapter<OptionsAdapter.Order
     ///////////////////////////////////////////////////////////////////////////
     // OrderSection
     ///////////////////////////////////////////////////////////////////////////
-    public static class OrderSection extends SectionEntity<Order> {
+    public static class OrderSection extends SectionEntity<Choice> {
         private int mCount;
-        private boolean isMore;
-        private Order mOrder;
+        private Choice mChoice;
 
         public OrderSection(boolean isHeader, String header, int count) {
             super(isHeader, header);
             mCount = count;
         }
 
-        public OrderSection(Order order) {
-            super(order);
-            mOrder = order;
+        public OrderSection(Choice choice) {
+            super(choice);
+            mChoice = choice;
         }
 
         public int getCount() {
@@ -61,12 +80,20 @@ public class OptionsAdapter extends BaseSectionQuickAdapter<OptionsAdapter.Order
             mCount = count;
         }
 
-        public Order getOrder() {
-            return mOrder;
+        public Choice getChoice() {
+            return mChoice;
         }
 
-        public void setOrder(Order status) {
-            mOrder = status;
+        public void setChoice(Choice choice) {
+            mChoice = choice;
+        }
+
+        @Override
+        public String toString() {
+            return "OrderSection{" +
+                    "mCount=" + mCount +
+                    ", mChoice=" + mChoice +
+                    "}\n";
         }
     }
 }

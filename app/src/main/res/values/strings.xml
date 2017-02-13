@@ -3,6 +3,15 @@
 
     <string name="app_name">Tyyar Food Delivery</string>
 
+    <!--Common start-->
+    <string name="common_price">£ %1$.2f</string>
+
+    <!--Common end-->
+
+    <!--MainActivity start-->
+
+    <!--MainActivity end-->
+
 
     <string name="date_time">%1$s, %2$s</string>
     <string name="messenger_send_button_text">Send</string>
@@ -166,18 +175,7 @@
     <string name="character_counter_pattern">%1$d / %2$d</string>
     <string name="checkout_button_text">Checkout</string>
     <string name="checkout_title">Checkout: %s</string>
-    <string name="com.crashlytics.android.build_id">1be97086-2f96-497e-8911-335018107f4c</string>
-    <string name="com_facebook_smart_device_instructions_0">Confirm your code on Facebook.</string>
-    <string name="com_facebook_smart_device_instructions_1">1.\u0009Go to the Menu</string>
-    <string name="com_facebook_smart_device_instructions_2">2.\u0009Select Device Requests</string>
-    <string name="com_facebook_smart_device_instructions_3">3.\u0009Confirm code.</string>
-    <string name="com_facebook_smart_device_instructions_or">- OR -</string>
-    <string name="com_facebook_smart_login_confirmation_cancel">Not you?</string>
-    <string name="com_facebook_smart_login_confirmation_continue_as">Continue as %1$s</string>
-    <string name="com_facebook_smart_login_confirmation_title">Confirm Login</string>
-    <string name="coming_soon">COMING SOON</string>
-    <string name="compensation_request_failed">Error submitting request</string>
-    <string name="consumer_id">Consumer ID</string>
+   <string name="consumer_id">Consumer ID</string>
     <string name="contact_dasher">Contact Your Dasher</string>
     <string name="continue_caps">CONTINUE</string>
     <string name="continue_string">Continue</string>

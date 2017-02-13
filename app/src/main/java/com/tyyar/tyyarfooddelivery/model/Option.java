@@ -18,9 +18,9 @@ public abstract class Option implements Parcelable, BaseItem {
 
     public abstract boolean required();
 
+    public abstract boolean singleChoice();
+
     public abstract ArrayList<Choice> choices();
 
-
-    public static Option create(String _ID, String name, boolean required, ArrayList<Choice> choices) {return new AutoValue_Option(_ID, name, required, choices);}
-
+    public static Option create(String _ID, String name, boolean required, boolean singleChoice, ArrayList<Choice> choices) {return new AutoValue_Option(_ID, name, required, singleChoice, choices);}
 }

@@ -19,14 +19,15 @@ public abstract class Item implements Parcelable, BaseItem {
 
     public abstract String description();
 
+    public abstract double price();
+
     public abstract String imageUrl();
 
-    public abstract boolean avaliable();
+    public abstract boolean available();
 
     public abstract ArrayList<Option> options();
 
 
-    public static Item create(String _ID, String name, String description, String imageUrl, boolean avaliable, ArrayList<Option> options) {return new AutoValue_Item(_ID, name, description, imageUrl, avaliable, options);}
-
+    public static Item create(String _ID, String name, String description, double price, String imageUrl, boolean available, ArrayList<Option> options) {return new AutoValue_Item(_ID, name, description, price, imageUrl, available, options);}
 
 }

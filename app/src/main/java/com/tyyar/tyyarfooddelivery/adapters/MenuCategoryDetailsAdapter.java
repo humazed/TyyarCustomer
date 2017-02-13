@@ -24,9 +24,10 @@ public class MenuCategoryDetailsAdapter extends BaseQuickAdapter<Item, BaseViewH
     private static final String TAG = MenuCategoryDetailsAdapter.class.getSimpleName();
     public static final String KEY_ITEM = "itemKey";
 
-    @BindView(R.id.item_name_textView) TextView mDishName;
+    @BindView(R.id.item_name_textView) TextView mItemNameTextView;
     @BindView(R.id.item_description_textView) TextView mDescription;
     @BindView(R.id.row_container) RelativeLayout mRowContainer;
+    @BindView(R.id.item_price_textView) TextView mItemPriceTextView;
 
     public MenuCategoryDetailsAdapter(ArrayList<Item> items) {
         super(R.layout.row_item, items);
@@ -36,7 +37,8 @@ public class MenuCategoryDetailsAdapter extends BaseQuickAdapter<Item, BaseViewH
     protected void convert(BaseViewHolder viewHolder, Item item) {
         ButterKnife.bind(this, viewHolder.getConvertView());
 
-        mDishName.setText(item.name());
+        mItemNameTextView.setText(item.name());
+        mItemPriceTextView.setText(mContext.getString(R.string.common_price, item.price()));
 
         mRowContainer.setOnClickListener(v -> {
             Intent intent = new Intent(mContext, OrderItemActivity.class);

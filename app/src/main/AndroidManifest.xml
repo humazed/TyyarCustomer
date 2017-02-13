@@ -2,6 +2,9 @@
 <manifest package="com.tyyar.tyyarfooddelivery"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!--<uses-permission android:name="android.permission.INTERNET"/>-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>-->
+     
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -22,7 +25,10 @@
         </activity>
         <activity android:name=".activities.ChartActivity">
         </activity>
-        <activity android:name=".activities.OrderItemActivity">
+        <activity
+            android:name=".activities.OrderItemActivity"
+            android:label=""
+            android:windowSoftInputMode="adjustPan">
         </activity>
     </application>
 
