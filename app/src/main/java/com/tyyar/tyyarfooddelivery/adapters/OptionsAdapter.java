@@ -48,7 +48,7 @@ public class OptionsAdapter extends BaseSectionQuickAdapter<OptionsAdapter.Order
     @Override
     protected void convertHead(BaseViewHolder helper, final OrderSection item) {
         helper.setText(R.id.header_title, item.header)
-                .setText(R.id.header_description, item.getCount() + "");
+                .setText(R.id.header_description, item.getCount() - 1 + "");
 
 //        helper.setOnClickListener(R.id.more,
 //                (View.OnClickListener) v ->

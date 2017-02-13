@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -55,6 +54,7 @@ public class OrderItemActivity extends AppCompatActivity {
     private Item mItem;
     private double mTotalPrice = 0;
     private List<OrderSection> mOptionsSectionedList;
+    private int mQuantity = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,9 +73,18 @@ public class OrderItemActivity extends AppCompatActivity {
         mItemNameTextView.setText(mItem.name());
         mItemDescriptionTextView.setText(mItem.description());
         mTotalPriceTextView.setText(getString(R.string.common_price, mItem.price()));
+        mQuantityTextView.setText(getString(R.string.quantity_number, mQuantity));
 
+        mQuantityPlusButton.setOnClickListener(v ->
+                mQuantityTextView.setText(getString(R.string.quantity_number, ++mQuantity)));
+        mQuantityMinusButton.setOnClickListener(v ->
+                mQuantityTextView.setText(getString(R.string.quantity_number, --mQuantity)));
 
-        Log.d(TAG, "onCreate " + mOptionsSectionedList);
+        mAddToOrderButton.setOnClickListener(v -> {
+            finish();
+        });
+
+        //Options list code
         OptionsAdapter optionsAdapter = new OptionsAdapter(mOptionsSectionedList);
         mOptionsRecyclerView.setAdapter(optionsAdapter);
         mOptionsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -96,35 +105,41 @@ public class OrderItemActivity extends AppCompatActivity {
                 Choice choice = mOptionsSectionedList.get(position).getChoice();
                 boolean checked = !checkBox.isChecked();
 
-                //for activating add button after choose all the required.
-                // TODO: 2/13/2017 make it work with more than 1.
-                for (Option requiredOption : requiredOptions) {
-                    if (requiredOption.choices().contains(choice)) {
-                        if (checked) pickedRequiredChoices.add(choice);
-                        else pickedRequiredChoices.remove(choice);
+                activateAddButton(choice, checked, requiredOptions, pickedRequiredChoices);
 
-                        if (pickedRequiredChoices.size() > 0)
-                            mAddToOrderButton.setBackgroundResource(R.drawable.dd_button_red_flat);
-                        else mAddToOrderButton.setBackgroundResource(R.drawable.dd_button_gray);
-                    }
-                }
-
-                changePrice(choice, checked);
+                changePrice(choice, checked, pickedOptionalChoices);
             }
 
-            private void changePrice(Choice choice, boolean checked) {
-                if (checked) {
-                    pickedOptionalChoices.add(choice);
-                    mTotalPrice = calculateTotalPrice(pickedOptionalChoices, mItem.price());
-                } else {
-                    pickedOptionalChoices.remove(choice);
-                    mTotalPrice = calculateTotalPrice(pickedOptionalChoices, mItem.price());
-                }
-
-                mTotalPriceTextView.setText(getString(R.string.common_price, mTotalPrice));
-            }
         });
 
+    }
+
+    private void activateAddButton(Choice choice, boolean checked, List<Option> requiredOptions,
+                                   ArrayList<Choice> pickedRequiredChoices) {
+        //for activating add button after choose all the required.
+        // TODO: 2/13/2017 make it work with more than 1.
+        for (Option requiredOption : requiredOptions) {
+            if (requiredOption.choices().contains(choice)) {
+                if (checked) pickedRequiredChoices.add(choice);
+                else pickedRequiredChoices.remove(choice);
+
+                if (pickedRequiredChoices.size() > 0)
+                    mAddToOrderButton.setBackgroundResource(R.drawable.dd_button_red_flat);
+                else mAddToOrderButton.setBackgroundResource(R.drawable.dd_button_gray);
+            }
+        }
+    }
+
+    private void changePrice(Choice choice, boolean checked, ArrayList<Choice> pickedOptionalChoices) {
+        if (checked) {
+            pickedOptionalChoices.add(choice);
+            mTotalPrice = calculateTotalPrice(pickedOptionalChoices, mItem.price());
+        } else {
+            pickedOptionalChoices.remove(choice);
+            mTotalPrice = calculateTotalPrice(pickedOptionalChoices, mItem.price());
+        }
+
+        mTotalPriceTextView.setText(getString(R.string.common_price, mTotalPrice));
     }
 
     double calculateTotalPrice(ArrayList<Choice> choices, double initPrice) {

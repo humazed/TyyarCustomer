@@ -9,6 +9,7 @@
     <!--Common end-->
 
     <!--MainActivity start-->
+    <string name="quantity_number">%d of these</string>
 
     <!--MainActivity end-->
 
