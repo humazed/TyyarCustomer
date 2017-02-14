@@ -8,9 +8,8 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.tyyar.tyyarfooddelivery.R;
 import com.tyyar.tyyarfooddelivery.activities.OrderItemActivity;
+import com.tyyar.tyyarfooddelivery.model.Category;
 import com.tyyar.tyyarfooddelivery.model.Item;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,14 +22,18 @@ import butterknife.ButterKnife;
 public class MenuCategoryDetailsAdapter extends BaseQuickAdapter<Item, BaseViewHolder> {
     private static final String TAG = MenuCategoryDetailsAdapter.class.getSimpleName();
     public static final String KEY_ITEM = "itemKey";
+    public static final String KEY_CATEGORY_NAME = "CategoryName";
 
     @BindView(R.id.item_name_textView) TextView mItemNameTextView;
     @BindView(R.id.item_description_textView) TextView mDescription;
     @BindView(R.id.row_container) RelativeLayout mRowContainer;
     @BindView(R.id.item_price_textView) TextView mItemPriceTextView;
 
-    public MenuCategoryDetailsAdapter(ArrayList<Item> items) {
-        super(R.layout.row_item, items);
+    private final String mCategoryName;
+
+    public MenuCategoryDetailsAdapter(Category category) {
+        super(R.layout.row_item, category.items());
+        mCategoryName = category.name();
     }
 
     @Override
@@ -43,6 +46,7 @@ public class MenuCategoryDetailsAdapter extends BaseQuickAdapter<Item, BaseViewH
         mRowContainer.setOnClickListener(v -> {
             Intent intent = new Intent(mContext, OrderItemActivity.class);
             intent.putExtra(KEY_ITEM, item);
+            intent.putExtra(KEY_CATEGORY_NAME, mCategoryName);
             mContext.startActivity(intent);
         });
 

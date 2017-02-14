@@ -13,6 +13,15 @@
 
     <!--MainActivity end-->
 
+    <!--CartActivity start-->
+    <string name="selection_fee">Selection Fee \t</string>
+    <string name="small_order_fee">Small Order Fee \t</string>
+    <string name="driver_tip">Driver Tip</string>
+
+    <string name="selection_fee_description">Delivery from this restaurant has a %1$s selection fee.</string>
+
+    <!--CartActivity end-->
+
 
     <string name="date_time">%1$s, %2$s</string>
     <string name="messenger_send_button_text">Send</string>
@@ -176,7 +185,7 @@
     <string name="character_counter_pattern">%1$d / %2$d</string>
     <string name="checkout_button_text">Checkout</string>
     <string name="checkout_title">Checkout: %s</string>
-   <string name="consumer_id">Consumer ID</string>
+    <string name="consumer_id">Consumer ID</string>
     <string name="contact_dasher">Contact Your Dasher</string>
     <string name="continue_caps">CONTINUE</string>
     <string name="continue_string">Continue</string>
@@ -199,7 +208,6 @@
     <string name="dasher_service_button_rude">Dasher rude or unprofessional</string>
     <string name="dasher_service_description">What happened?</string>
     <string name="dasher_service_title">Poor Dasher Service</string>
-    <string name="dasher_tip">Dasher Tip</string>
     <string name="dasher_tip_info">100% for your Dasher</string>
     <string name="dasher_tip_info_icon_text_subtotal">Tip is %1$d%% on your %2$s order. All of your tip goes to the Dasher.</string>
     <string name="dasher_tip_info_icon_text_subtotal_selection">Tip is %1$d%% on your %2$s order (subtotal &amp; selection fee). All of your tip goes to the Dasher.</string>
@@ -467,14 +475,11 @@
     <string name="select_delivery_time">Select Delivery Time</string>
     <string name="select_up_to_x">Select up to %d</string>
     <string name="select_x">Select %d</string>
-    <string name="selection_fee">Selection Fee</string>
-    <string name="selection_fee_description">Delivery from this restaurant has a %1$s selection fee.</string>
     <string name="send_invite">Send Invites</string>
     <string name="send_invite_with_count">Send Invites (%s)</string>
     <string name="send_us_feedback">Send Us Feedback</string>
     <string name="sending">Sending…</string>
     <string name="service_fee">Service Fee</string>
-    <string name="small_order_fee">Small Order Fee</string>
     <string name="small_order_fee_description">Orders under %1$s cost %2$s more. Add %3$s to drop this fee.</string>
     <string name="sms_notifications_title">SMS Notifications</string>
     <string name="something_else">Something Else</string>

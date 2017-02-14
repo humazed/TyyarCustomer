@@ -13,8 +13,6 @@ import java.util.ArrayList;
 
 @AutoValue
 public abstract class Item implements Parcelable, BaseItem {
-    public abstract String _ID();
-
     public abstract String name();
 
     public abstract String description();
@@ -27,7 +25,16 @@ public abstract class Item implements Parcelable, BaseItem {
 
     public abstract ArrayList<Option> options();
 
+    private boolean selected;
 
     public static Item create(String _ID, String name, String description, double price, String imageUrl, boolean available, ArrayList<Option> options) {return new AutoValue_Item(_ID, name, description, price, imageUrl, available, options);}
 
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
 }

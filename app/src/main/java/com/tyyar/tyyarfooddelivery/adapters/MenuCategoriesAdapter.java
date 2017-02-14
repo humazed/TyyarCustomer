@@ -42,7 +42,7 @@ public class MenuCategoriesAdapter extends BaseQuickAdapter<Category, BaseViewHo
 
         mRowContainer.setOnClickListener(v -> {
             Intent intent = new Intent(mContext, MenuCategoryItemsActivity.class);
-            intent.putParcelableArrayListExtra(KEY_CATEGORY, category.items());
+            intent.putExtra(KEY_CATEGORY, category);
             mContext.startActivity(intent);
         });
     }

@@ -269,7 +269,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
                     android:fontFamily="sans-serif-medium"
-                    android:text="@string/dasher_tip"
+                    android:text="@string/driver_tip"
                     android:textColor="@color/black"
                     android:textSize="16.0sp"/>
 

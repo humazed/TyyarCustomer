@@ -18,10 +18,12 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
+import com.tyyar.tyyarfooddelivery.App;
 import com.tyyar.tyyarfooddelivery.R;
 import com.tyyar.tyyarfooddelivery.adapters.MenuCategoryDetailsAdapter;
 import com.tyyar.tyyarfooddelivery.adapters.OptionsAdapter;
 import com.tyyar.tyyarfooddelivery.adapters.OptionsAdapter.OrderSection;
+import com.tyyar.tyyarfooddelivery.model.CartItem;
 import com.tyyar.tyyarfooddelivery.model.Choice;
 import com.tyyar.tyyarfooddelivery.model.Item;
 import com.tyyar.tyyarfooddelivery.model.Option;
@@ -33,6 +35,8 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.tyyar.tyyarfooddelivery.adapters.MenuCategoryDetailsAdapter.KEY_CATEGORY_NAME;
 
 public class OrderItemActivity extends AppCompatActivity {
     private static final String TAG = OrderItemActivity.class.getSimpleName();
@@ -67,22 +71,15 @@ public class OrderItemActivity extends AppCompatActivity {
         mItem = getIntent().getParcelableExtra(MenuCategoryDetailsAdapter.KEY_ITEM);
         mOptionsSectionedList = DataUtils.getOptionsSectionedList(mItem.options());
 
-        Glide.with(this).load(Uri.parse(mItem.imageUrl()))
-                .into(mItemImageView);
+        Glide.with(this).load(Uri.parse(mItem.imageUrl())).into(mItemImageView);
 
         mItemNameTextView.setText(mItem.name());
         mItemDescriptionTextView.setText(mItem.description());
         mTotalPriceTextView.setText(getString(R.string.common_price, mItem.price()));
         mQuantityTextView.setText(getString(R.string.quantity_number, mQuantity));
 
-        mQuantityPlusButton.setOnClickListener(v ->
-                mQuantityTextView.setText(getString(R.string.quantity_number, ++mQuantity)));
-        mQuantityMinusButton.setOnClickListener(v ->
-                mQuantityTextView.setText(getString(R.string.quantity_number, --mQuantity)));
-
-        mAddToOrderButton.setOnClickListener(v -> {
-            finish();
-        });
+        mQuantityPlusButton.setOnClickListener(v -> mQuantityTextView.setText(getString(R.string.quantity_number, ++mQuantity)));
+        mQuantityMinusButton.setOnClickListener(v -> mQuantityTextView.setText(getString(R.string.quantity_number, --mQuantity)));
 
         //Options list code
         OptionsAdapter optionsAdapter = new OptionsAdapter(mOptionsSectionedList);
@@ -96,8 +93,9 @@ public class OrderItemActivity extends AppCompatActivity {
                 if (option.required()) add(option);
         }};
 
-        ArrayList<Choice> pickedRequiredChoices = new ArrayList<>();
-        ArrayList<Choice> pickedOptionalChoices = new ArrayList<>();
+        ArrayList<Choice> selectedRequiredChoices = new ArrayList<>();
+        ArrayList<Choice> selectedOptionalChoices = new ArrayList<>();
+        ArrayList<Choice> selectedChoices = new ArrayList<>();
         mOptionsRecyclerView.addOnItemTouchListener(new OnItemChildClickListener() {
             @Override
             public void onSimpleItemChildClick(BaseQuickAdapter adapter, View view, int position) {
@@ -105,12 +103,23 @@ public class OrderItemActivity extends AppCompatActivity {
                 Choice choice = mOptionsSectionedList.get(position).getChoice();
                 boolean checked = !checkBox.isChecked();
 
-                activateAddButton(choice, checked, requiredOptions, pickedRequiredChoices);
+                activateAddButton(choice, checked, requiredOptions, selectedRequiredChoices);
+                selectedChoices.addAll(selectedRequiredChoices);
+                selectedChoices.addAll(selectedOptionalChoices);
 
-                changePrice(choice, checked, pickedOptionalChoices);
+                changePrice(choice, checked, selectedOptionalChoices);
             }
-
         });
+
+
+        mAddToOrderButton.setOnClickListener(v -> {
+            ((App) getApplication()).addCartItem(
+                    CartItem.create(mQuantity, mItem._ID(), mItem.name(),
+                            getIntent().getStringExtra(KEY_CATEGORY_NAME),
+                            mTotalPrice, selectedChoices));
+            finish();
+        });
+
 
     }
 
