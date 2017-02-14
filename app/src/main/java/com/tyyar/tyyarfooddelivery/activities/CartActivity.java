@@ -60,6 +60,8 @@ public class CartActivity extends AppCompatActivity {
 
         mOrderRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mOrderRecyclerView.setAdapter(new CartAdapter(cartItems));
+        mOrderRecyclerView.setHasFixedSize(true);
+        mOrderRecyclerView.setNestedScrollingEnabled(false);
 
         double totalPrice = getTotalPrice(cartItems);
 

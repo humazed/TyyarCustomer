@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set android:zAdjustment="top"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <translate android:interpolator="@android:anim/linear_interpolator" android:duration="@android:integer/config_shortAnimTime" android:fillAfter="true" android:fromYDelta="0.0%p" android:toYDelta="100.0%p"
-      xmlns:android="http://schemas.android.com/apk/res/android" />
+     xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate android:interpolator="@android:anim/linear_interpolator"
+               android:duration="@android:integer/config_shortAnimTime"
+               android:fillAfter="true"
+               android:fromYDelta="0.0%p"
+               android:toYDelta="100.0%p"
+               xmlns:android="http://schemas.android.com/apk/res/android"/>
 </set>

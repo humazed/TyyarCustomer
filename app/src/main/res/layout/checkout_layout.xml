@@ -10,6 +10,7 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/action_button"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true">
 
         <LinearLayout
@@ -69,14 +70,15 @@
                     android:text="Palo Alto, CA, 94301"
                     android:textSize="14.0sp"/>
 
-                <View
+                <ImageView
                     android:id="@+id/change_address_arrow"
-                    android:layout_width="12dp"
-                    android:layout_height="16dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="8dp"
-                    android:background="@drawable/chevron_right"/>
+                    android:background="@drawable/ic_chevron_right_gray_36dp"/>
             </RelativeLayout>
 
             <View
@@ -98,6 +100,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="72dp"
                     android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true">
 
                     <EditText
@@ -267,6 +270,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:fontFamily="sans-serif-medium"
                     android:text="@string/driver_tip"
@@ -280,7 +284,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/driver_tip_title"
-                    android:background="@drawable/info_outline"/>
+                    android:background="@drawable/ic_info_outline_24dp"/>
 
                 <TextView
                     android:id="@+id/driver_tip"
@@ -305,68 +309,24 @@
 
                 <RadioButton
                     android:id="@+id/tip0"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginRight="6dp"
-                    android:layout_weight="1.0"
-                    android:background="@drawable/price_button_background"
-                    android:button="@android:color/transparent"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center"
-                    android:text="10%"
-                    android:textColor="@color/red"
-                    android:textColorHighlight="@color/white"
-                    android:textSize="12dp"/>
+                    style="@style/tip_radio_button"
+                    android:text="10%"/>
 
                 <RadioButton
                     android:id="@+id/tip1"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginRight="6dp"
-                    android:layout_weight="1.0"
-                    android:background="@drawable/price_button_background"
-                    android:button="@android:color/transparent"
+                    style="@style/tip_radio_button"
                     android:checked="true"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center"
-                    android:text="15%"
-                    android:textColor="@color/red"
-                    android:textColorHighlight="@color/white"
-                    android:textSize="12dp"/>
+                    android:text="15%"/>
 
                 <RadioButton
                     android:id="@+id/tip2"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginRight="6dp"
-                    android:layout_weight="1.0"
-                    android:background="@drawable/price_button_background"
-                    android:button="@android:color/transparent"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center"
-                    android:text="20%"
-                    android:textColor="@color/red"
-                    android:textColorHighlight="@color/white"
-                    android:textSize="12dp"/>
+                    style="@style/tip_radio_button"
+                    android:text="20%"/>
 
                 <RadioButton
                     android:id="@+id/tip3"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginRight="6dp"
-                    android:layout_weight="1.0"
-                    android:background="@drawable/price_button_background"
-                    android:button="@android:color/transparent"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center"
-                    android:text="Other"
-                    android:textColor="@color/red"
-                    android:textColorHighlight="@color/white"
-                    android:textSize="12dp"/>
+                    style="@style/tip_radio_button"
+                    android:text="Other"/>
             </RadioGroup>
         </LinearLayout>
     </ScrollView>
@@ -375,7 +335,8 @@
         android:id="@+id/action_button"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/dd_button_gray">
 
         <TextView
             android:id="@+id/actionButtonTitleTextView"
@@ -385,7 +346,7 @@
             android:gravity="center"
             android:text="@string/place_order"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="16dp"
             android:textStyle="bold"/>
 
         <TextView
