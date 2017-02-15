@@ -28,7 +28,7 @@ public class MenuCategoriesActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
-        UiUtils.showDrawer(this, mToolbar).setSelection(1, false);
+        UiUtils.showDrawer(this, mToolbar, 1);
 
         ArrayList<Category> menu = getIntent().getParcelableArrayListExtra(MerchantsAdapter.KEY_MENU);
 

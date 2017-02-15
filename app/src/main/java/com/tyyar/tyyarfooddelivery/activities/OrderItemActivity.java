@@ -66,7 +66,7 @@ public class OrderItemActivity extends AppCompatActivity {
         setContentView(R.layout.activity_order_item);
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
-        UiUtils.showDrawer(this, mToolbar).setSelection(1, false);
+        UiUtils.showDrawer(this, mToolbar, 1);
 
         mItem = getIntent().getParcelableExtra(MenuCategoryDetailsAdapter.KEY_ITEM);
         mOptionsSectionedList = DataUtils.getOptionsSectionedList(mItem.options());

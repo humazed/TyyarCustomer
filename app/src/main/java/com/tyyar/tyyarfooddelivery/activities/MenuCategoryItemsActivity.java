@@ -32,7 +32,7 @@ public class MenuCategoryItemsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_catergory_items);
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
-        UiUtils.showDrawer(this, mToolbar).setSelection(1, false);
+        UiUtils.showDrawer(this, mToolbar, 1);
 
         Category category = getIntent().getParcelableExtra(MenuCategoriesAdapter.KEY_CATEGORY);
 

@@ -54,7 +54,7 @@ public class CartActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
-        UiUtils.showDrawer(this, mToolbar).setSelection(1, false);
+        UiUtils.showDrawer(this, mToolbar, 1);
 
         ArrayList<CartItem> cartItems = ((App) getApplication()).getCartItems();
         Log.d(TAG, "cartItems = " + cartItems);

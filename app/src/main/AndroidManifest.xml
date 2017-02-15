@@ -31,6 +31,10 @@
         </activity>
         <activity android:name=".activities.CheckoutActivity">
         </activity>
+        <activity android:name=".activities.OrdersHistoryActivity">
+        </activity>
+        <activity android:name=".activities.AccountActivity">
+        </activity>
     </application>
 
 </manifest>
