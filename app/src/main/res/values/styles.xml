@@ -1,36 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="@style/MaterialDrawerTheme.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:overScrollMode">never</item>
+        <item name="android:windowActionBar">false</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
-    <style name="MSV_ImageButton">
-        <item name="android:background">?android:selectableItemBackground</item>
-        <item name="android:paddingLeft">@dimen/search_icon_padding</item>
-        <item name="android:paddingRight">@dimen/search_icon_padding</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">fill_parent</item>
-    </style>
-
-
-    <style name="SelectableItemTheme">
-        <item name="colorControlHighlight">@color/light_gray</item>
-    </style>
-
-    <style name="ToolbarColoredBackArrow" parent="@style/Theme.AppCompat.Light.NoActionBar">
-        <item name="android:textColorSecondary">@color/white</item>
-        <item name="android:windowBackground">@color/white</item>
-        <item name="android:textSize">18.0sp</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:fontFamily" tools:targetApi="jelly_bean">sans-serif-medium</item>
-        <item name="selectableItemBackground">?android:selectableItemBackground</item>
-        <item name="selectableItemBackgroundBorderless">?android:selectableItemBackground</item>
-        <item name="colorControlActivated">@color/white</item>
-        <item name="colorControlHighlight">@color/light_gray</item>
+        <item name="colorControlNormal">@color/gray</item>
+        <item name="colorControlActivated">@color/red</item>
+        <item name="colorControlHighlight">@color/red</item>
+        <item name="alertDialogTheme">@style/DDDialogAlert</item>
     </style>
 
     <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
@@ -42,6 +23,25 @@
         <item name="colorControlNormal">@color/white</item>
         <item name="colorControlActivated">@color/red</item>
         <item name="colorControlHighlight">@color/red</item>
+    </style>
+
+    <style name="tip_radio_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginLeft">6dp</item>
+        <item name="android:layout_marginRight">6dp</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:background">@drawable/price_button_background</item>
+        <item name="android:button">@android:color/transparent</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/text_color_selector</item>
+        <item name="android:onClick">onTipRadioButtonClicked</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="SelectableItemTheme">
+        <item name="colorControlHighlight">@color/light_gray</item>
     </style>
 
     <style name="AppBaseTheme.RobotoBold" parent="@style/AppBaseTheme">
@@ -343,36 +343,6 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
-    <style name="DoorDashActionBar" parent="@style/Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:windowActionBar">false</item>
-        <item name="colorPrimary">@color/red</item>
-        <item name="colorPrimaryDark">@color/DD_DARK_RED</item>
-        <item name="colorControlNormal">@color/gray</item>
-        <item name="colorControlActivated">@color/red</item>
-        <item name="colorControlHighlight">@color/red</item>
-        <item name="alertDialogTheme">@style/DDDialogAlert</item>
-    </style>
-
-    <style name="DoorDashLightSearchBar" parent="@style/DoorDashActionBar">
-        <item name="actionBarTheme">@style/MyActionBarTheme</item>
-    </style>
-
-    <style name="DoorDashTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:overScrollMode">never</item>
-        <item name="android:windowActionBar">false</item>
-        <item name="colorPrimary">@color/red</item>
-        <item name="colorPrimaryDark">@color/DD_DARK_RED</item>
-        <item name="colorAccent">@color/red</item>
-        <item name="colorControlNormal">@color/gray</item>
-        <item name="colorControlActivated">@color/red</item>
-        <item name="colorControlHighlight">@color/red</item>
-        <item name="alertDialogTheme">@style/DDDialogAlert</item>
-    </style>
-
-    <style name="MyActionBarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
-        <item name="android:background">@color/white</item>
-    </style>
 
     <style name="NavigationDrawerStyle">
         <item name="android:textSize">18.0sp</item>
@@ -386,18 +356,4 @@
         <item name="colorSwitchThumbNormal">@color/light_gray</item>
     </style>
 
-    <style name="tip_radio_button">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">40dp</item>
-        <item name="android:layout_marginLeft">6dp</item>
-        <item name="android:layout_marginRight">6dp</item>
-        <item name="android:layout_weight">1.0</item>
-        <item name="android:background">@drawable/price_button_background</item>
-        <item name="android:button">@android:color/transparent</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/text_color_selector</item>
-        <item name="android:onClick">onTipRadioButtonClicked</item>
-        <item name="android:textSize">12sp</item>
-    </style>
 </resources>
