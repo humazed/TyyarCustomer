@@ -5,6 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
     android:orientation="vertical"
     tools:context="com.tyyar.tyyarfooddelivery.activities.CheckoutActivity">
 
@@ -22,7 +24,7 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/action_button"
+            android:layout_above="@+id/order_button"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true">
@@ -34,7 +36,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/checkout_error"
+                    android:id="@+id/checkout_error_textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/error_yellow"
@@ -60,13 +62,13 @@
 
                 <RelativeLayout
                     style="@style/SelectableItemBackground"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="start"
                     android:padding="16dp">
 
                     <TextView
-                        android:id="@+id/address_title"
+                        android:id="@+id/address_title_textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
@@ -76,10 +78,10 @@
                         android:textSize="16.0sp"/>
 
                     <TextView
-                        android:id="@+id/address_details"
+                        android:id="@+id/address_details_textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/address_title"
+                        android:layout_below="@id/address_title_textView"
                         android:text="Palo Alto, CA, 94301"
                         android:textSize="14.0sp"/>
 
@@ -100,33 +102,25 @@
                     android:layout_marginLeft="16dp"
                     android:background="@color/border_gray"/>
 
-                <RelativeLayout
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="72dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:focusableInTouchMode="true">
 
-                    <ScrollView
+                    <EditText
+                        android:id="@+id/delivery_instructions_editText"
                         android:layout_width="match_parent"
-                        android:layout_height="72dp"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true">
-
-                        <EditText
-                            android:id="@+id/delivery_instructions_edit_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
-                            android:hint="@string/delivery_instructions_prompt"
-                            android:minLines="3"
-                            android:paddingLeft="16dp"
-                            android:textColor="@color/black"
-                            android:textColorHint="@color/gray"
-                            android:textSize="14.0sp"/>
-                    </ScrollView>
-                </RelativeLayout>
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/delivery_instructions_prompt"
+                        android:minLines="3"
+                        android:paddingLeft="16dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
+                        android:textSize="14.0sp"/>
+                </ScrollView>
 
                 <View
                     android:layout_width="match_parent"
@@ -135,14 +129,12 @@
                     android:background="@color/border_gray"/>
 
                 <RelativeLayout
-                    android:id="@+id/eta_container"
                     style="@style/SelectableItemBackground"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp">
 
                     <TextView
-                        android:id="@+id/eta_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
@@ -156,7 +148,7 @@
                         android:layout_alignParentRight="true">
 
                         <TextView
-                            android:id="@+id/eta_content"
+                            android:id="@+id/eta_content_textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="46 min"
@@ -164,7 +156,6 @@
                             android:textSize="16.0sp"/>
 
                         <View
-                            android:id="@+id/change_eta_arrow"
                             android:layout_width="12dp"
                             android:layout_height="16dp"
                             android:layout_marginLeft="20.599976dip"
@@ -180,7 +171,6 @@
                     android:background="@color/border_gray"/>
 
                 <RelativeLayout
-                    android:id="@+id/payment_container"
                     style="@style/SelectableItemBackground"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -188,7 +178,6 @@
                     android:padding="16dp">
 
                     <TextView
-                        android:id="@+id/payment_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
@@ -203,7 +192,7 @@
                         android:layout_alignParentRight="true">
 
                         <TextView
-                            android:id="@+id/credit_card_type"
+                            android:id="@+id/credit_card_type_textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="VISA"
@@ -211,7 +200,7 @@
                             android:textSize="16.0sp"/>
 
                         <TextView
-                            android:id="@+id/last_four_digits"
+                            android:id="@+id/last_four_digits_textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="4dp"
@@ -220,7 +209,6 @@
                             android:textSize="16.0sp"/>
 
                         <View
-                            android:id="@+id/change_payment_arrow"
                             android:layout_width="12dp"
                             android:layout_height="16dp"
                             android:layout_marginLeft="20.599976dip"
@@ -266,7 +254,6 @@
                 </LinearLayout>
 
                 <RelativeLayout
-                    android:id="@+id/dasher_tip_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="16dp">
@@ -278,22 +265,14 @@
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
+                        android:drawableRight="@drawable/ic_info_outline_24dp"
                         android:fontFamily="sans-serif-medium"
-                        android:text="@string/driver_tip"
+                        android:text="@string/driver_tip_title"
                         android:textColor="@color/black"
                         android:textSize="16.0sp"/>
 
-                    <ImageView
-                        android:id="@+id/dasher_tip_info_icon"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
-                        android:layout_toRightOf="@id/driver_tip_title"
-                        android:background="@drawable/ic_info_outline_24dp"/>
-
                     <TextView
-                        android:id="@+id/driver_tip"
+                        android:id="@+id/driver_tip_textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -305,7 +284,7 @@
                 </RelativeLayout>
 
                 <RadioGroup
-                    android:id="@+id/tip_radio_group"
+                    android:id="@+id/tip_radioGroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -314,23 +293,23 @@
                     android:paddingRight="6dp">
 
                     <RadioButton
-                        android:id="@+id/tip0"
+                        android:id="@+id/tip_10"
                         style="@style/tip_radio_button"
                         android:text="10%"/>
 
                     <RadioButton
-                        android:id="@+id/tip1"
+                        android:id="@+id/tip_15"
                         style="@style/tip_radio_button"
                         android:checked="true"
                         android:text="15%"/>
 
                     <RadioButton
-                        android:id="@+id/tip2"
+                        android:id="@+id/tip_20"
                         style="@style/tip_radio_button"
                         android:text="20%"/>
 
                     <RadioButton
-                        android:id="@+id/tip3"
+                        android:id="@+id/tip_other"
                         style="@style/tip_radio_button"
                         android:text="Other"/>
                 </RadioGroup>
@@ -338,25 +317,24 @@
         </ScrollView>
 
         <RelativeLayout
-            android:id="@+id/action_button"
+            android:id="@+id/order_button"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:background="@drawable/dd_button_gray">
 
             <TextView
-                android:id="@+id/actionButtonTitleTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="@string/place_order"
                 android:textColor="@color/white"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/actionButtonSubtitleTextView"
+                android:id="@+id/price_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -364,7 +342,7 @@
                 android:layout_marginRight="10dp"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="16dp"/>
+                android:textSize="16sp"/>
         </RelativeLayout>
     </RelativeLayout>
 </LinearLayout>

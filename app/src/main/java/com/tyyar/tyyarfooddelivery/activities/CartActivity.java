@@ -24,6 +24,7 @@ import butterknife.ButterKnife;
 
 public class CartActivity extends AppCompatActivity {
     private static final String TAG = CartActivity.class.getSimpleName();
+    public static final String KEY_TOTAL_PRICE = "totalPrice";
 
     @BindView(R.id.toolbar) Toolbar mToolbar;
     @BindView(R.id.order_recyclerView) RecyclerView mOrderRecyclerView;
@@ -71,13 +72,18 @@ public class CartActivity extends AppCompatActivity {
         mDiscountTextView.setText(getString(R.string.common_price, totalPrice));
         mTotalTextView.setText(getString(R.string.common_price, totalPrice));
 
-        mCheckoutButton.setOnClickListener(v -> startActivity(new Intent(this, CheckoutActivity.class)));
+        mCheckoutButton.setOnClickListener(v -> {
+            Intent intent = new Intent(CartActivity.this, CheckoutActivity.class);
+            intent.putExtra(KEY_TOTAL_PRICE, totalPrice);
+
+            startActivity(intent);
+        });
     }
 
     private double getTotalPrice(ArrayList<CartItem> cartItems) {
         double totalPrice = 0;
         for (CartItem cartItem : cartItems)
-            totalPrice += cartItem.totalPrice();
+            totalPrice += cartItem.totalPrice() * cartItem.itemCount();
         return totalPrice;
     }
 }

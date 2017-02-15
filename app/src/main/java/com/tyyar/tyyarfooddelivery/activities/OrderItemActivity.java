@@ -78,8 +78,14 @@ public class OrderItemActivity extends AppCompatActivity {
         mTotalPriceTextView.setText(getString(R.string.common_price, mItem.price()));
         mQuantityTextView.setText(getString(R.string.quantity_number, mQuantity));
 
-        mQuantityPlusButton.setOnClickListener(v -> mQuantityTextView.setText(getString(R.string.quantity_number, ++mQuantity)));
-        mQuantityMinusButton.setOnClickListener(v -> mQuantityTextView.setText(getString(R.string.quantity_number, --mQuantity)));
+        mQuantityPlusButton.setOnClickListener(v -> {
+            mQuantityTextView.setText(getString(R.string.quantity_number, ++mQuantity));
+            mTotalPriceTextView.setText(getString(R.string.common_price, mTotalPrice * mQuantity));
+        });
+        mQuantityMinusButton.setOnClickListener(v -> {
+            mQuantityTextView.setText(getString(R.string.quantity_number, --mQuantity));
+            mTotalPriceTextView.setText(getString(R.string.common_price, mTotalPrice * mQuantity));
+        });
 
         //Options list code
         OptionsAdapter optionsAdapter = new OptionsAdapter(mOptionsSectionedList);

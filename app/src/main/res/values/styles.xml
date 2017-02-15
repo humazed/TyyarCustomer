@@ -386,12 +386,18 @@
         <item name="colorSwitchThumbNormal">@color/light_gray</item>
     </style>
 
-    <style name="tooltip_bubble_text">
-        <item name="android:textSize">12.0sp</item>
-        <item name="android:textColor">@android:color/white</item>
-        <item name="android:gravity">left</item>
-        <item name="android:shadowColor">#40000000</item>
-        <item name="android:shadowDy">-1.0</item>
-        <item name="android:shadowRadius">0.25</item>
+    <style name="tip_radio_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginLeft">6dp</item>
+        <item name="android:layout_marginRight">6dp</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:background">@drawable/price_button_background</item>
+        <item name="android:button">@android:color/transparent</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/text_color_selector</item>
+        <item name="android:onClick">onTipRadioButtonClicked</item>
+        <item name="android:textSize">12sp</item>
     </style>
 </resources>

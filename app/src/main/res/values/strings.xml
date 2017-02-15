@@ -22,6 +22,10 @@
 
     <!--CartActivity end-->
 
+    <!--CheckoutActivity start-->
+    <string name="driver_tip_title">Driver Tip \t</string>
+    <!--CheckoutActivity end-->
+
 
     <string name="date_time">%1$s, %2$s</string>
     <string name="messenger_send_button_text">Send</string>
