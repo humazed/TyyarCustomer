@@ -14,6 +14,7 @@
     <!--MainActivity end-->
 
     <!--CartActivity start-->
+    <string name="cart_activity_label">Cart</string>
     <string name="selection_fee">Selection Fee \t</string>
     <string name="small_order_fee">Small Order Fee \t</string>
     <string name="driver_tip">Driver Tip</string>
@@ -23,6 +24,7 @@
     <!--CartActivity end-->
 
     <!--CheckoutActivity start-->
+    <string name="checkout_activity_label">Checkout</string>
     <string name="driver_tip_title">Driver Tip \t</string>
     <!--CheckoutActivity end-->
 

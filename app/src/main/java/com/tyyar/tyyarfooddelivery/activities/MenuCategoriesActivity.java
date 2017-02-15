@@ -9,15 +9,15 @@ import android.support.v7.widget.Toolbar;
 import com.tyyar.tyyarfooddelivery.R;
 import com.tyyar.tyyarfooddelivery.adapters.MenuCategoriesAdapter;
 import com.tyyar.tyyarfooddelivery.adapters.MerchantsAdapter;
-import com.tyyar.tyyarfooddelivery.model.Category;
+import com.tyyar.tyyarfooddelivery.model.Merchant;
 import com.tyyar.tyyarfooddelivery.utils.UiUtils;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MenuCategoriesActivity extends AppCompatActivity {
+    private static final String TAG = MenuCategoriesActivity.class.getSimpleName();
+
     @BindView(R.id.toolbar) Toolbar mToolbar;
     @BindView(R.id.categories_recycler) RecyclerView mCategoriesRecycler;
 
@@ -25,15 +25,16 @@ public class MenuCategoriesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_categories);
-
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
         UiUtils.showDrawer(this, mToolbar, 1);
 
-        ArrayList<Category> menu = getIntent().getParcelableArrayListExtra(MerchantsAdapter.KEY_MENU);
+        Merchant merchant = getIntent().getParcelableExtra(MerchantsAdapter.KEY_MERCHANT);
+
+        if (getSupportActionBar() != null) getSupportActionBar().setTitle(merchant.name());
 
         mCategoriesRecycler.setLayoutManager(new LinearLayoutManager(this));
-        mCategoriesRecycler.setAdapter(new MenuCategoriesAdapter(menu));
+        mCategoriesRecycler.setAdapter(new MenuCategoriesAdapter(merchant.menu()));
 
     }
 }

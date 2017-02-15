@@ -2,9 +2,9 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:fitsSystemWindows="true"
             app:collapsedTitleTextAppearance="@style/AppBaseTheme.RobotoMedium.LargeSize.White"
             app:contentScrim="?colorPrimary"
-            app:expandedTitleMarginBottom="13dp"
+            app:expandedTitleMarginBottom="45dp"
             app:expandedTitleMarginStart="16dp"
             app:expandedTitleMarginTop="16dp"
             app:expandedTitleTextAppearance="@style/AppBaseTheme.RobotoMedium.LargeSize.Black"
@@ -30,40 +30,10 @@
                 android:layout_height="180dp"
                 android:background="@color/white"
                 android:scaleType="centerCrop"
+                android:src="@color/gray"
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="0.7"/>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginBottom="13dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="193dp"
-                app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier="0.6">
-
-                <TextView
-                    android:id="@+id/item_name_textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:fontFamily="sans-serif-medium"
-                    android:maxLines="1"
-                    android:text="item_name_textView"
-                    android:textSize="20.0sp"/>
-
-                <TextView
-                    android:id="@+id/item_description_textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@id/item_name_textView"
-                    android:ellipsize="end"
-                    android:maxLines="3"
-                    android:paddingTop="3dp"/>
-            </RelativeLayout>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -71,6 +41,20 @@
                 android:layout_height="?actionBarSize"
                 app:layout_collapseMode="pin"
                 app:theme="@style/ToolbarColoredBackArrow"/>
+
+            <TextView
+                android:id="@+id/item_description_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="13dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="215dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:paddingTop="3dp"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.6"/>
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 

@@ -43,7 +43,7 @@ public class OrderItemActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar) Toolbar mToolbar;
     @BindView(R.id.item_imageView) ImageView mItemImageView;
-    @BindView(R.id.item_name_textView) TextView mItemNameTextView;
+//    @BindView(R.id.item_name_textView) TextView mItemNameTextView;
     @BindView(R.id.item_description_textView) TextView mItemDescriptionTextView;
     @BindView(R.id.options_recyclerView) RecyclerView mOptionsRecyclerView;
     @BindView(R.id.total_priceTextView) TextView mTotalPriceTextView;
@@ -70,10 +70,11 @@ public class OrderItemActivity extends AppCompatActivity {
 
         mItem = getIntent().getParcelableExtra(MenuCategoryDetailsAdapter.KEY_ITEM);
         mOptionsSectionedList = DataUtils.getOptionsSectionedList(mItem.options());
+        if (getSupportActionBar() != null) getSupportActionBar().setTitle(mItem.name());
 
         Glide.with(this).load(Uri.parse(mItem.imageUrl())).into(mItemImageView);
 
-        mItemNameTextView.setText(mItem.name());
+//        mItemNameTextView.setText(mItem.name());
         mItemDescriptionTextView.setText(mItem.description());
         mTotalPriceTextView.setText(getString(R.string.common_price, mItem.price()));
         mQuantityTextView.setText(getString(R.string.quantity_number, mQuantity));

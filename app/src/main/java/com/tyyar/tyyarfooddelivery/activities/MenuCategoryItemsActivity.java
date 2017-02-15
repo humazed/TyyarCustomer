@@ -36,6 +36,8 @@ public class MenuCategoryItemsActivity extends AppCompatActivity {
 
         Category category = getIntent().getParcelableExtra(MenuCategoriesAdapter.KEY_CATEGORY);
 
+        if (getSupportActionBar() != null) getSupportActionBar().setTitle(category.name());
+
         mRecycler.setLayoutManager(new LinearLayoutManager(this));
         mRecycler.setAdapter(new MenuCategoryDetailsAdapter(category));
 

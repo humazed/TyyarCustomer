@@ -20,7 +20,7 @@
     <color name="attachment_icon_unknown">#4daaaaaa</color>
     <color name="background_gray">#fffafafa</color>
     <color name="background_tab_pressed">#6633b5e5</color>
-    <color name="black">#ff1a1a1a</color>
+    <color name="black">#000000</color>
     <color name="border_gray">#ffe0e0e0</color>
     <color name="bs_dark_divider_color">#1fffffff</color>
     <color name="bs_divider_color">#1f000000</color>

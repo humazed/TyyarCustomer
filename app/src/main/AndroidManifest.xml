@@ -2,8 +2,9 @@
 <manifest package="com.tyyar.tyyarfooddelivery"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
-    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -18,23 +19,19 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MenuCategoriesActivity">
-        </activity>
-        <activity android:name=".activities.MenuCategoryItemsActivity">
-        </activity>
-        <activity android:name=".activities.CartActivity">
-        </activity>
+        <activity android:name=".activities.MenuCategoriesActivity"/>
+        <activity android:name=".activities.MenuCategoryItemsActivity"/>
+        <activity
+            android:name=".activities.CartActivity"
+            android:label="@string/cart_activity_label"/>
         <activity
             android:name=".activities.OrderItemActivity"
-            android:label=""
-            android:windowSoftInputMode="adjustPan">
-        </activity>
-        <activity android:name=".activities.CheckoutActivity">
-        </activity>
-        <activity android:name=".activities.OrdersHistoryActivity">
-        </activity>
-        <activity android:name=".activities.AccountActivity">
-        </activity>
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".activities.CheckoutActivity"
+            android:label="@string/cart_activity_label"/>
+        <activity android:name=".activities.OrdersHistoryActivity"/>
+        <activity android:name=".activities.AccountActivity"/>
     </application>
 
 </manifest>
