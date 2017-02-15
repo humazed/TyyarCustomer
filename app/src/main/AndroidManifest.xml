@@ -30,7 +30,7 @@
             android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".activities.CheckoutActivity"
-            android:label="@string/cart_activity_label"/>
+            android:label="@string/checkout_activity_label"/>
         <activity android:name=".activities.OrdersHistoryActivity"/>
         <activity android:name=".activities.AccountActivity"/>
     </application>

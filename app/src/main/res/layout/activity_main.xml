@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="1"
     tools:context="com.tyyar.tyyarfooddelivery.activities.MainActivity">
 
     <include
@@ -18,5 +17,6 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/merchants_recycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        tools:listitem="@layout/row_merchant"/>
 </LinearLayout>

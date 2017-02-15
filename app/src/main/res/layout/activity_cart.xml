@@ -5,20 +5,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:context="com.tyyar.tyyarfooddelivery.activities.CartActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
+        android:layout_height="wrap_content">
 
         <include
             android:id="@+id/toolbar"
             layout="@layout/view_tool_bar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fitsSystemWindows="true"/>
+            android:layout_height="wrap_content"/>
     </android.support.design.widget.AppBarLayout>
 
 

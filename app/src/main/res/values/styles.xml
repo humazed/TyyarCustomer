@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="AppTheme" parent="@style/MaterialDrawerTheme.Light">
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:overScrollMode">never</item>
         <item name="android:windowActionBar">false</item>

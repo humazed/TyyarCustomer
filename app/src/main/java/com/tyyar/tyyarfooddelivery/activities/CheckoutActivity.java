@@ -48,6 +48,8 @@ public class CheckoutActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
 
+        getSupportActionBar().setTitle(R.string.chat_activity_title);
+
         Intent intent = getIntent();
         mTotalPrice = intent.getDoubleExtra(CartActivity.KEY_TOTAL_PRICE, 0);
 
