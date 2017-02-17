@@ -22,11 +22,9 @@ public class DataServer {
     public static List<Merchant> getMerchants() {
         Location location = Location.create("1", 13.000, 13.1512, "outside the lala");
 
-        ArrayList<Option> options = new ArrayList<Option>() {{
+        ArrayList<Option> options = new ArrayList<Option>() {{//////////////////////////////////
             add(Option.create("1", "Size _REQ_", true, true, getChoices(1)));
-            add(Option.create("2", "Size", false, true, getChoices2(2)));
-            add(Option.create("2", "Size", false, false, getChoices2(2)));
-            add(Option.create("3", "Size", false, false, getChoices2(3)));
+            add(Option.create("3", "Additions (optional)", false, false, getChoices2(3)));
         }};
 
         ArrayList<Item> items = new ArrayList<Item>() {{
@@ -69,18 +67,18 @@ public class DataServer {
     @NonNull
     private static ArrayList<Choice> getChoices(int id) {
         return new ArrayList<Choice>() {{
-            add(Choice.create(id + "_1", "Big", "Big man", 10, true, false));
-            add(Choice.create(id + "_2", "Big", "Big man", 20, true, false));
-            add(Choice.create(id + "_3", "Big", "Big man", 50, true, false));
+            add(Choice.create(id + "_1", "Big", " considerable size", 5, true, true));
+            add(Choice.create(id + "_2", "Medium", "about halfway between two extremes of size ", 5, true, true));
+            add(Choice.create(id + "_3", "Small", "size that is less than normal", 5, true, true));
         }};
     }
 
     @NonNull
     private static ArrayList<Choice> getChoices2(int id) {
         return new ArrayList<Choice>() {{
-            add(Choice.create(id + "_1", "Big", "Big man", 5, true, true));
-            add(Choice.create(id + "_2", "Big", "Big man", 5, true, true));
-            add(Choice.create(id + "_3", "Big", "Big man", 5, true, true));
+            add(Choice.create(id + "_1", "No additions", "Without any addition", 0, true, false));
+            add(Choice.create(id + "_2", "Additions", "Salads and pickles", 20, true, false));
+            add(Choice.create(id + "_3", "Plus additions", " Toast ,Salads and pickles ", 50, true, false));
         }};
     }
 }
