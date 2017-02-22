@@ -22,7 +22,7 @@ public class DataServer {
     public static List<Merchant> getMerchants() {
         Location location = Location.create("1", 13.000, 13.1512, "outside the lala");
 
-        ArrayList<Option> options = new ArrayList<Option>() {{//////////////////////////////////
+        ArrayList<Option> options = new ArrayList<Option>() {{
             add(Option.create("1", "Size _REQ_", true, true, getChoices(1)));
             add(Option.create("3", "Additions (optional)", false, false, getChoices2(3)));
         }};

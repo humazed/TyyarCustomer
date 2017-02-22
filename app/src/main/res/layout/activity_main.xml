@@ -2,6 +2,7 @@
 <LinearLayout
     android:id="@+id/activity_main"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,9 +11,15 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/view_tool_bar"
+        layout="@layout/view_tool_bar"/>
+
+<!--
+    <com.lapism.searchview.SearchView
+        android:id="@+id/searchView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.lapism.searchview.SearchBehavior"/>
+-->
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/merchants_recycler"

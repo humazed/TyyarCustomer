@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 import com.tyyar.tyyarfooddelivery.DataServer;
 import com.tyyar.tyyarfooddelivery.R;
 import com.tyyar.tyyarfooddelivery.adapters.MerchantsAdapter;
-import com.tyyar.tyyarfooddelivery.utils.UiUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
-        UiUtils.showDrawer(this, mToolbar, 1);
+//        UiUtils.showDrawer(this, mToolbar, 1);
 
         mMerchantsRecycler.setLayoutManager(new LinearLayoutManager(this));
         mMerchantsRecycler.setAdapter(new MerchantsAdapter(DataServer.getMerchants()));
