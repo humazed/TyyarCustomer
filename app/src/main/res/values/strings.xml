@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Tyyar Food Delivery</string>
+    <string name="app_name">Tyyar</string>
 
     <!--Common start-->
     <string name="common_price">£ %1$.2f</string>

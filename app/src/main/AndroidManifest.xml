@@ -12,8 +12,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".activities.MainActivity">
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -33,6 +32,8 @@
             android:label="@string/checkout_activity_label"/>
         <activity android:name=".activities.OrdersHistoryActivity"/>
         <activity android:name=".activities.AccountActivity"/>
+        <activity android:name=".activities.SearchMerchantsActivity">
+        </activity>
     </application>
 
 </manifest>

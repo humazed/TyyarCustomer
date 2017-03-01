@@ -321,7 +321,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/dd_button_gray">
+            android:background="@drawable/dd_button_red_flat">
 
             <TextView
                 android:layout_width="match_parent"

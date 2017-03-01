@@ -28,7 +28,7 @@ public class DataServer {
         }};
 
         ArrayList<Item> items = new ArrayList<Item>() {{
-            add(Item.create("1", "Neapolitan Pizza", "a very good pizza", 1.12, "file:///android_asset/abouShakra.png", true, options));
+            add(Item.create("1", "Neapolitan Pizza", "a very good pizza", 5.00, "file:///android_asset/abouShakra.png", true, options));
             add(Item.create("1", "Chicago Pizza", "a very good pizza", 2.13, "file:///android_asset/abouShakra.png", true, options));
             add(Item.create("1", "Sicilian Pizza", "a very good pizza", 3.14, "file:///android_asset/abouShakra.png", true, options));
             add(Item.create("1", "New York Style Pizza", "a very good pizza", 4.15, "file:///android_asset/abouShakra.png", true, options));
@@ -52,15 +52,15 @@ public class DataServer {
         }};
 
         return new ArrayList<Merchant>() {{
-            add(Merchant.create("1", "Cook Doora", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/abouShakra.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
+            add(Merchant.create("1", "Abou Shakra", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/abouShakra.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
             add(Merchant.create("2", "Farroga ", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/ArabiataAlShabrawy.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
             add(Merchant.create("3", "Papa John", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/BobSushi.jpg", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
             add(Merchant.create("4", "Arabiata Al", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/Burger king .png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
-            add(Merchant.create("5", "Bob Sushi", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/abouShakra.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
-            add(Merchant.create("6", "Iskandarany ", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/abouShakra.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
-            add(Merchant.create("7", "Burger king", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/abouShakra.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
-            add(Merchant.create("8", "Burger king", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/abouShakra.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
-            add(Merchant.create("9", "Burger king", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/abouShakra.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
+            add(Merchant.create("5", "Bob Sushi", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/e3zi_sqp.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
+            add(Merchant.create("6", "Iskandarany ", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/e2wf_sqp.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
+            add(Merchant.create("7", "Burger king", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/e2gl_sqp.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
+            add(Merchant.create("8", "Burger king", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/e8uw_sqp.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
+            add(Merchant.create("9", "Burger king", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/e9yo_sqp.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
         }};
     }
 
@@ -68,8 +68,8 @@ public class DataServer {
     private static ArrayList<Choice> getChoices(int id) {
         return new ArrayList<Choice>() {{
             add(Choice.create(id + "_1", "Big", " considerable size", 5, true, true));
-            add(Choice.create(id + "_2", "Medium", "about halfway between two extremes of size ", 5, true, true));
-            add(Choice.create(id + "_3", "Small", "size that is less than normal", 5, true, true));
+            add(Choice.create(id + "_2", "Medium", "about halfway between two extremes of size ", 10, true, true));
+            add(Choice.create(id + "_3", "Small", "size that is less than normal", 15, true, true));
         }};
     }
 

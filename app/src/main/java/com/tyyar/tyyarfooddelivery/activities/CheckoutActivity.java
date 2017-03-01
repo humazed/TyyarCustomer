@@ -55,6 +55,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
         mDriverTipTextView.setText(getString(R.string.common_price, calculateTip(.15)));
 
+        mOrderButton.setOnClickListener(v -> startActivity(new Intent(this, MainActivity.class)));
     }
 
     private double calculateTip(double tipPercentage) {

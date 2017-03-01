@@ -143,7 +143,7 @@
                         android:paddingBottom="4dp"
                         android:paddingRight="16dp"
                         android:paddingTop="4dp"
-                        android:text="$ 10.00"
+                        android:text="$ 8.00"
                         android:textColor="@color/black"
                         android:textSize="16sp"/>
 
@@ -190,7 +190,7 @@
                         android:paddingLeft="16dp"
                         android:paddingRight="16dp"
                         android:paddingTop="4dp"
-                        android:text="$5.00"
+                        android:text="$ 0.00"
                         android:textColor="@color/DD_GREEN"
                         android:textSize="16sp"/>
                 </LinearLayout>
@@ -322,7 +322,7 @@
                         android:paddingLeft="16dp"
                         android:paddingRight="16dp"
                         android:paddingTop="4dp"
-                        android:text="$ 55.00"
+                        android:text="$ 38.00"
                         android:textColor="@color/black"
                         android:textSize="16sp"/>
                 </LinearLayout>

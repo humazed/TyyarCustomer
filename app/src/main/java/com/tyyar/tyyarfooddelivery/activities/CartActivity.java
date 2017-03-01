@@ -68,9 +68,9 @@ public class CartActivity extends AppCompatActivity {
 
         mCheckoutSubtotalTextView.setText(getString(R.string.common_price, totalPrice));
         mSubtotalTextView.setText(getString(R.string.common_price, totalPrice));
-        mDeliveryTextView.setText(getString(R.string.common_price, totalPrice));
-        mDiscountTextView.setText(getString(R.string.common_price, totalPrice));
-        mTotalTextView.setText(getString(R.string.common_price, totalPrice));
+//        mDeliveryTextView.setText(getString(R.string.common_price, totalPrice));
+//        mDiscountTextView.setText(getString(R.string.common_price, totalPrice));
+//        mTotalTextView.setText(getString(R.string.common_price, totalPrice));
 
         mCheckoutButton.setOnClickListener(v -> {
             Intent intent = new Intent(CartActivity.this, CheckoutActivity.class);
