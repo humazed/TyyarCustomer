@@ -7,9 +7,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 
 import com.tyyar.tyyarfooddelivery.DataServer;
 import com.tyyar.tyyarfooddelivery.R;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.toolbar) Toolbar mToolbar;
     @BindView(R.id.merchants_recycler) RecyclerView mMerchantsRecycler;
     @BindView(R.id.activity_main) LinearLayout mActivityMain;
+    @BindView(R.id.menu_spinner) Spinner mSpinner;
+    @BindView(R.id.menu_search) ImageView mMenuSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
         UiUtils.showDrawer(this, mToolbar, 1);
+        mMenuSearch.setOnClickListener(v -> startActivity(new Intent(this, SearchMerchantsActivity.class)));
+
 
         mMerchantsRecycler.setLayoutManager(new LinearLayoutManager(this));
         mMerchantsRecycler.setAdapter(new MerchantsAdapter(DataServer.getMerchants()));
@@ -40,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_activity_main, menu);
+        getMenuInflater().inflate(R.menu.menu_activity_main, menu);
         return true;
     }
 
@@ -49,9 +53,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-            case R.id.action_search:
-                startActivity(new Intent(this, SearchMerchantsActivity.class));
-                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

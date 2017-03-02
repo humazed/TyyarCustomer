@@ -33,5 +33,6 @@ public class SearchMerchantsActivity extends AppCompatActivity {
 
         mFloatingSearchView.setOnHomeActionClickListener(this::finish);
 
+
     }
 }
