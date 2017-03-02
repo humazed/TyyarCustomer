@@ -69,4 +69,7 @@ dependencies {
     //
     compile 'com.google.maps.android:android-maps-utils:0.4.4'
     compile 'com.github.jd-alexander:library:1.1.0'
+
+    compile  'com.google.api-client:google-api-client-android:1.21.0'
+    compile 'com.google.http-client:google-http-client-jackson2:1.22.0'
 }

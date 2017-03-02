@@ -42,7 +42,6 @@ public class OrderItemActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar) Toolbar mToolbar;
     @BindView(R.id.item_imageView) ImageView mItemImageView;
-    //    @BindView(R.id.item_name_textView) TextView mItemNameTextView;
     @BindView(R.id.item_description_textView) TextView mItemDescriptionTextView;
     @BindView(R.id.options_recyclerView) RecyclerView mOptionsRecyclerView;
     @BindView(R.id.total_priceTextView) TextView mTotalPriceTextView;
@@ -83,8 +82,10 @@ public class OrderItemActivity extends AppCompatActivity {
             mTotalPriceTextView.setText(getString(R.string.common_price, mTotalPrice * mQuantity));
         });
         mQuantityMinusButton.setOnClickListener(v -> {
-            mQuantityTextView.setText(getString(R.string.quantity_number, --mQuantity));
-            mTotalPriceTextView.setText(getString(R.string.common_price, mTotalPrice * mQuantity));
+            if (mQuantity > 1) {
+                mQuantityTextView.setText(getString(R.string.quantity_number, --mQuantity));
+                mTotalPriceTextView.setText(getString(R.string.common_price, mTotalPrice * mQuantity));
+            }
         });
 
         //Options list code
