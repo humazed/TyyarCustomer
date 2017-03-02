@@ -7,7 +7,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -43,7 +42,7 @@ public class OrderItemActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar) Toolbar mToolbar;
     @BindView(R.id.item_imageView) ImageView mItemImageView;
-//    @BindView(R.id.item_name_textView) TextView mItemNameTextView;
+    //    @BindView(R.id.item_name_textView) TextView mItemNameTextView;
     @BindView(R.id.item_description_textView) TextView mItemDescriptionTextView;
     @BindView(R.id.options_recyclerView) RecyclerView mOptionsRecyclerView;
     @BindView(R.id.total_priceTextView) TextView mTotalPriceTextView;
@@ -52,8 +51,8 @@ public class OrderItemActivity extends AppCompatActivity {
     @BindView(R.id.substitution_title) TextView mSubstitutionTitle;
     @BindView(R.id.substitution_type_spinner) Spinner mSubstitutionTypeSpinner;
     @BindView(R.id.quantity_textView) TextView mQuantityTextView;
-    @BindView(R.id.quantity_plus_button) Button mQuantityPlusButton;
-    @BindView(R.id.quantity_minus_button) Button mQuantityMinusButton;
+    @BindView(R.id.quantity_plus_button) ImageView mQuantityPlusButton;
+    @BindView(R.id.quantity_minus_button) ImageView mQuantityMinusButton;
 
     private Item mItem;
     private double mTotalPrice = 0;
