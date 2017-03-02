@@ -34,6 +34,8 @@
         <activity android:name=".activities.AccountActivity"/>
         <activity android:name=".activities.SearchMerchantsActivity">
         </activity>
+        <activity android:name=".activities.GAETestActivity">
+        </activity>
     </application>
 
 </manifest>
