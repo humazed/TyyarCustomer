@@ -8,7 +8,7 @@
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    tools:context="com.tyyar.tyyarfooddelivery.activities.CheckoutActivity">
+    tools:context="com.tyyar.tyyarfooddelivery.screens.CheckoutActivity">
 
     <include
         android:id="@+id/toolbar"

@@ -1,11 +1,10 @@
-package com.tyyar.tyyarfooddelivery.activities;
+package com.tyyar.tyyarfooddelivery.screens;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.appspot.amiable_aquifer_157201.helloworld.Helloworld;
 import com.tyyar.tyyarfooddelivery.R;
 
 import butterknife.BindView;

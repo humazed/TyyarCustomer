@@ -1,4 +1,4 @@
-package com.tyyar.tyyarfooddelivery.activities;
+package com.tyyar.tyyarfooddelivery.screens.home;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,12 +15,13 @@ import android.widget.Spinner;
 import com.tyyar.tyyarfooddelivery.DataServer;
 import com.tyyar.tyyarfooddelivery.R;
 import com.tyyar.tyyarfooddelivery.adapters.MerchantsAdapter;
+import com.tyyar.tyyarfooddelivery.screens.SearchMerchantsActivity;
 import com.tyyar.tyyarfooddelivery.utils.UiUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar) Toolbar mToolbar;
     @BindView(R.id.merchants_recycler) RecyclerView mMerchantsRecycler;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
         UiUtils.showDrawer(this, mToolbar, 1);

@@ -27,6 +27,7 @@ android {
         javaMaxHeapSize '2g'
     }
 }
+
 def supportVersion = '25.2.0'
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -69,7 +70,11 @@ dependencies {
     //
     compile 'com.google.maps.android:android-maps-utils:0.4.4'
     compile 'com.github.jd-alexander:library:1.1.0'
-
-    compile  'com.google.api-client:google-api-client-android:1.21.0'
-    compile 'com.google.http-client:google-http-client-jackson2:1.22.0'
+    //
+    compile('com.google.api-client:google-api-client-android:1.21.0') {
+        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+    }
+    compile('com.google.http-client:google-http-client-jackson2:1.22.0') {
+        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+    }
 }

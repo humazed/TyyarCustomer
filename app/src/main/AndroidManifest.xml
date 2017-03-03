@@ -12,29 +12,29 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".screens.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MenuCategoriesActivity"/>
-        <activity android:name=".activities.MenuCategoryItemsActivity"/>
+        <activity android:name=".screens.MenuCategoriesActivity"/>
+        <activity android:name=".screens.MenuCategoryItemsActivity"/>
         <activity
-            android:name=".activities.CartActivity"
+            android:name=".screens.CartActivity"
             android:label="@string/cart_activity_label"/>
         <activity
-            android:name=".activities.OrderItemActivity"
+            android:name=".screens.OrderItemActivity"
             android:windowSoftInputMode="adjustPan"/>
         <activity
-            android:name=".activities.CheckoutActivity"
+            android:name=".screens.CheckoutActivity"
             android:label="@string/checkout_activity_label"/>
-        <activity android:name=".activities.OrdersHistoryActivity"/>
-        <activity android:name=".activities.AccountActivity"/>
-        <activity android:name=".activities.SearchMerchantsActivity">
+        <activity android:name=".screens.OrdersHistoryActivity"/>
+        <activity android:name=".screens.AccountActivity"/>
+        <activity android:name=".screens.SearchMerchantsActivity">
         </activity>
-        <activity android:name=".activities.GAETestActivity">
+        <activity android:name=".screens.GAETestActivity">
         </activity>
     </application>
 

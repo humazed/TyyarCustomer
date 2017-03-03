@@ -7,7 +7,7 @@ import android.widget.TextView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.tyyar.tyyarfooddelivery.R;
-import com.tyyar.tyyarfooddelivery.activities.MenuCategoryItemsActivity;
+import com.tyyar.tyyarfooddelivery.screens.MenuCategoryItemsActivity;
 import com.tyyar.tyyarfooddelivery.model.Category;
 
 import java.util.List;

@@ -8,10 +8,10 @@
 
     <!--Common end-->
 
-    <!--MainActivity start-->
+    <!--HomeActivity start-->
     <string name="quantity_number">%d of these</string>
 
-    <!--MainActivity end-->
+    <!--HomeActivity end-->
 
     <!--CartActivity start-->
     <string name="cart_activity_label">Cart</string>

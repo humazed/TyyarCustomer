@@ -1,4 +1,4 @@
-package com.tyyar.tyyarfooddelivery.activities;
+package com.tyyar.tyyarfooddelivery.screens;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.tyyar.tyyarfooddelivery.R;
+import com.tyyar.tyyarfooddelivery.screens.home.HomeActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -55,7 +56,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
         mDriverTipTextView.setText(getString(R.string.common_price, calculateTip(.15)));
 
-        mOrderButton.setOnClickListener(v -> startActivity(new Intent(this, MainActivity.class)));
+        mOrderButton.setOnClickListener(v -> startActivity(new Intent(this, HomeActivity.class)));
     }
 
     private double calculateTip(double tipPercentage) {

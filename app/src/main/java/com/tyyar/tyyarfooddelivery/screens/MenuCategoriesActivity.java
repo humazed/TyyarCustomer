@@ -1,4 +1,4 @@
-package com.tyyar.tyyarfooddelivery.activities;
+package com.tyyar.tyyarfooddelivery.screens;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

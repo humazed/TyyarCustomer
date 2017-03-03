@@ -14,9 +14,9 @@ import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.tyyar.tyyarfooddelivery.R;
-import com.tyyar.tyyarfooddelivery.activities.AccountActivity;
-import com.tyyar.tyyarfooddelivery.activities.MainActivity;
-import com.tyyar.tyyarfooddelivery.activities.OrdersHistoryActivity;
+import com.tyyar.tyyarfooddelivery.screens.AccountActivity;
+import com.tyyar.tyyarfooddelivery.screens.home.HomeActivity;
+import com.tyyar.tyyarfooddelivery.screens.OrdersHistoryActivity;
 
 /**
  * User: YourPc
@@ -55,8 +55,8 @@ public class UiUtils {
                     Log.d(TAG, "showDrawer " + drawerItem.getIdentifier());
                     switch ((int) drawerItem.getIdentifier()) {
                         case 1:
-                            if (!(activity instanceof MainActivity))
-                                activity.startActivity(new Intent(activity, MainActivity.class));
+                            if (!(activity instanceof HomeActivity))
+                                activity.startActivity(new Intent(activity, HomeActivity.class));
                             break;
                         case 2:
                             if (!(activity instanceof OrdersHistoryActivity))

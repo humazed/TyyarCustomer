@@ -1,4 +1,4 @@
-package com.tyyar.tyyarfooddelivery.activities;
+package com.tyyar.tyyarfooddelivery.screens;
 
 import android.net.Uri;
 import android.os.Bundle;

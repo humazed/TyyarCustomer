@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.tyyar.tyyarfooddelivery.R;
-import com.tyyar.tyyarfooddelivery.activities.MenuCategoriesActivity;
+import com.tyyar.tyyarfooddelivery.screens.MenuCategoriesActivity;
 import com.tyyar.tyyarfooddelivery.model.Merchant;
 
 import java.util.List;
