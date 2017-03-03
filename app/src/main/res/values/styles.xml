@@ -44,6 +44,10 @@
         <item name="colorControlHighlight">@color/light_gray</item>
     </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
     <style name="AppBaseTheme.RobotoBold" parent="@style/AppBaseTheme">
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily" tools:targetApi="jelly_bean">sans-serif</item>

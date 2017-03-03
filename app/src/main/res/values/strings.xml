@@ -545,5 +545,7 @@
     <string name="x_included">%d included</string>
     <string name="yes">Yes</string>
     <string name="yes_excited">Yes!</string>
-    <string name="zendesk_chat_key">3LuEIVGHTTHv0y3TaslymRBpS9cL2BTD</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -2,19 +2,20 @@ package com.tyyar.tyyarfooddelivery.screens.home;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 
-import com.tyyar.tyyarfooddelivery.DataServer;
 import com.tyyar.tyyarfooddelivery.R;
-import com.tyyar.tyyarfooddelivery.adapters.MerchantsAdapter;
 import com.tyyar.tyyarfooddelivery.screens.SearchMerchantsActivity;
 import com.tyyar.tyyarfooddelivery.utils.UiUtils;
 
@@ -24,10 +25,11 @@ import butterknife.ButterKnife;
 public class HomeActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar) Toolbar mToolbar;
-    @BindView(R.id.merchants_recycler) RecyclerView mMerchantsRecycler;
-    @BindView(R.id.activity_main) LinearLayout mActivityMain;
     @BindView(R.id.menu_spinner) Spinner mSpinner;
     @BindView(R.id.menu_search) ImageView mMenuSearch;
+    @BindView(R.id.tabs) TabLayout mTabLayout;
+    @BindView(R.id.container) ViewPager mContainer;
+    @BindView(R.id.main_content) CoordinatorLayout mMainContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,25 +39,55 @@ public class HomeActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         UiUtils.showDrawer(this, mToolbar, 1);
         mMenuSearch.setOnClickListener(v -> startActivity(new Intent(this, SearchMerchantsActivity.class)));
+        mContainer.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
+        mTabLayout.setupWithViewPager(mContainer);
 
 
-        mMerchantsRecycler.setLayoutManager(new LinearLayoutManager(this));
-        mMerchantsRecycler.setAdapter(new MerchantsAdapter(DataServer.getMerchants()));
+
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_activity_main, menu);
-        return true;
-    }
+    /**
+     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
+     * one of the tabs.
+     */
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            default:
-                return super.onOptionsItemSelected(item);
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch (position) {
+                case 0:
+                    return RestaurantsFragment.newInstance("");
+                case 1:
+                    return RestaurantsFragment.newInstance("");
+                case 2:
+                    return RestaurantsFragment.newInstance("");
+                default:
+                    return null;
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return 3;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0:
+                    return "Restaurants";
+                case 1:
+                    return "Pharmacies";
+                case 2:
+                    return "Supermarkets";
+                default:
+                    return "";
+            }
         }
     }
 
