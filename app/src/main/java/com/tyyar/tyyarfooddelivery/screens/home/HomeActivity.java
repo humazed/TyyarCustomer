@@ -10,8 +10,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
@@ -42,9 +40,6 @@ public class HomeActivity extends AppCompatActivity {
         mContainer.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
         mTabLayout.setupWithViewPager(mContainer);
 
-
-
-
     }
 
     /**
@@ -63,9 +58,9 @@ public class HomeActivity extends AppCompatActivity {
                 case 0:
                     return RestaurantsFragment.newInstance("");
                 case 1:
-                    return RestaurantsFragment.newInstance("");
+                    return PharmacyiesFragment.newInstance("");
                 case 2:
-                    return RestaurantsFragment.newInstance("");
+                    return MarketsFragment.newInstance("");
                 default:
                     return null;
             }

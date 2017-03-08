@@ -38,11 +38,11 @@ import static com.microsoft.windowsazure.mobileservices.table.query.QueryOperati
  * Activities that contain this fragment must implement the
  * {@link OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link RestaurantsFragment#newInstance} factory method to
+ * Use the {@link MarketsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class RestaurantsFragment extends Fragment {
-    private static final String TAG = RestaurantsFragment.class.getSimpleName();
+public class MarketsFragment extends Fragment {
+    private static final String TAG = MarketsFragment.class.getSimpleName();
     private static final String ARG_PARAM1 = "param1";
 
     @BindView(R.id.merchants_recycler) RecyclerView mMerchantsRecycler;
@@ -62,12 +62,12 @@ public class RestaurantsFragment extends Fragment {
     private MerchantsAdapter mAdapter;
 
 
-    public RestaurantsFragment() {
+    public MarketsFragment() {
         // Required empty public constructor
     }
 
-    public static RestaurantsFragment newInstance(String param1) {
-        RestaurantsFragment fragment = new RestaurantsFragment();
+    public static MarketsFragment newInstance(String param1) {
+        MarketsFragment fragment = new MarketsFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         fragment.setArguments(args);
@@ -86,7 +86,7 @@ public class RestaurantsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_restaurants, container, false);
+        View view = inflater.inflate(R.layout.fragment_markets, container, false);
         unbinder = ButterKnife.bind(this, view);
 
         mMerchantsRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -142,7 +142,7 @@ public class RestaurantsFragment extends Fragment {
                 try {
                     final List<Marhants> results = mMerchantsTable
                             .where()
-                            .field("type").eq(val("restaurants"))
+                            .field("type").eq(val("Market"))
                             .execute().get();
 
                     Log.d(TAG, "doInBackground " + results);
