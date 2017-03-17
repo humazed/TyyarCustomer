@@ -2,37 +2,21 @@ package com.tyyar.tyyarfooddelivery.screens.home;
 
 import android.content.Context;
 import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
-import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
-import com.microsoft.windowsazure.mobileservices.table.MobileServiceTable;
-import com.squareup.okhttp.OkHttpClient;
-import com.tyyar.tyyarfooddelivery.DataServer;
 import com.tyyar.tyyarfooddelivery.R;
 import com.tyyar.tyyarfooddelivery.adapters.MerchantsAdapter;
-import com.tyyar.tyyarfooddelivery.model.Marhants;
-import com.tyyar.tyyarfooddelivery.model.Merchant;
-
-import java.net.MalformedURLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-
-import static com.microsoft.windowsazure.mobileservices.table.query.QueryOperations.val;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -52,21 +36,12 @@ public class MarketsFragment extends Fragment {
     private Unbinder unbinder;
     private OnFragmentInteractionListener mListener;
 
-    private String mParam1;
-
-    private MobileServiceClient mClient;
-
-    /**
-     * Mobile Service Table used to access data
-     */
-    private MobileServiceTable<Marhants> mMerchantsTable;
-
     private MerchantsAdapter mAdapter;
 
+    private String mParam1;
 
-    public MarketsFragment() {
-        // Required empty public constructor
-    }
+
+    public MarketsFragment() {/*Required empty public constructor*/}
 
     public static MarketsFragment newInstance(String param1) {
         MarketsFragment fragment = new MarketsFragment();
@@ -82,7 +57,6 @@ public class MarketsFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
         }
-
     }
 
     @Override
@@ -94,90 +68,9 @@ public class MarketsFragment extends Fragment {
 //        mAdapter = new MerchantsAdapter(DataServer.getMerchants());
 //        mMerchantsRecycler.setAdapter(mAdapter);
 
-        try {
-            // Create the Mobile Service Client instance, using the provided
-
-            // Mobile Service URL and key
-            mClient = new MobileServiceClient("https://server001.azurewebsites.net",
-                    getActivity());
-//                    .withFilter(new ProgressFilter());
-
-            // Extend timeout from default of 10s to 20s
-            mClient.setAndroidHttpClientFactory(() -> {
-                OkHttpClient client = new OkHttpClient();
-                client.setReadTimeout(20, TimeUnit.SECONDS);
-                client.setWriteTimeout(20, TimeUnit.SECONDS);
-                return client;
-            });
-
-            // Get the Mobile Service Table instance to use
-            mMerchantsTable = mClient.getTable(Marhants.class);
-
-            // Load the items from the Mobile Service
-            refreshItemsFromTable();
-
-        } catch (MalformedURLException e) {
-            Log.e(TAG, "onCreateView: ", e);
-        } catch (Exception e) {
-            Log.e(TAG, "onCreateView: ", e);
-        }
-
 
         return view;
     }
-
-    /**
-     * Refresh the list with the items in the Table
-     */
-    private void refreshItemsFromTable() {
-        AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void... params) {
-                try {
-                    final List<Marhants> results = mMerchantsTable
-                            .where()
-                            .field("type").eq(val("Market"))
-                            .execute().get();
-
-                    Log.d(TAG, "doInBackground " + results);
-
-                    ArrayList<Merchant> merchants = DataServer.getMerchants(results);
-
-                    getActivity().runOnUiThread(() -> {
-                        mProgressBar.setVisibility(View.GONE);
-                        mAdapter = new MerchantsAdapter(merchants);
-                        mMerchantsRecycler.setAdapter(mAdapter);
-                    });
-                } catch (final Exception e) {
-                    Log.e(TAG, "doInBackground: ", e);
-                }
-
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(Void aVoid) {
-                super.onPostExecute(aVoid);
-            }
-        };
-
-        runAsyncTask(task);
-    }
-
-    /**
-     * Run an ASync task on the corresponding executor
-     *
-     * @param task
-     * @return
-     */
-    private AsyncTask<Void, Void, Void> runAsyncTask(AsyncTask<Void, Void, Void> task) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            return task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-        } else {
-            return task.execute();
-        }
-    }
-
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

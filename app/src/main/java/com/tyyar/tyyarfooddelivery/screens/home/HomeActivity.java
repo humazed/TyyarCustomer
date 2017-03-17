@@ -20,6 +20,9 @@ import com.tyyar.tyyarfooddelivery.utils.UiUtils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * MainActivity
+ */
 public class HomeActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar) Toolbar mToolbar;
@@ -58,7 +61,7 @@ public class HomeActivity extends AppCompatActivity {
                 case 0:
                     return RestaurantsFragment.newInstance("");
                 case 1:
-                    return PharmacyiesFragment.newInstance("");
+                    return PharmaciesFragment.newInstance("");
                 case 2:
                     return MarketsFragment.newInstance("");
                 default:

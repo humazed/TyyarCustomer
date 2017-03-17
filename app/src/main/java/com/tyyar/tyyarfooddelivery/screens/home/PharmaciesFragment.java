@@ -1,38 +1,35 @@
 package com.tyyar.tyyarfooddelivery.screens.home;
 
+
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
-import com.appspot.tayyar_trial.restaurantAPI.RestaurantAPI;
-import com.appspot.tayyar_trial.restaurantAPI.model.RestaurantView;
-import com.google.api.client.extensions.android.http.AndroidHttp;
-import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.tyyar.tyyarfooddelivery.R;
 import com.tyyar.tyyarfooddelivery.adapters.MerchantsAdapter;
-
-import java.io.IOException;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 
-public class RestaurantsFragment extends Fragment {
-    private static final String TAG = RestaurantsFragment.class.getSimpleName();
+/**
+ * A simple {@link Fragment} subclass.
+ * Activities that contain this fragment must implement the
+ * {@link OnFragmentInteractionListener} interface
+ * to handle interaction events.
+ * Use the {@link PharmaciesFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class PharmaciesFragment extends Fragment {
+    private static final String TAG = PharmaciesFragment.class.getSimpleName();
     private static final String ARG_PARAM1 = "param1";
-    public static final String ROOT_URL = "https://tayyar-trial.appspot.com/_ah/api/";
 
     @BindView(R.id.merchants_recycler) RecyclerView mMerchantsRecycler;
     @BindView(R.id.progress_bar) ProgressBar mProgressBar;
@@ -45,10 +42,10 @@ public class RestaurantsFragment extends Fragment {
     private String mParam1;
 
 
-    public RestaurantsFragment() { /* Required empty public constructor */ }
+    public PharmaciesFragment() { /* Required empty public constructor */ }
 
-    public static RestaurantsFragment newInstance(String param1) {
-        RestaurantsFragment fragment = new RestaurantsFragment();
+    public static PharmaciesFragment newInstance(String param1) {
+        PharmaciesFragment fragment = new PharmaciesFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         fragment.setArguments(args);
@@ -65,39 +62,15 @@ public class RestaurantsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_restaurants, container, false);
+        View view = inflater.inflate(R.layout.fragment_pharmacies, container, false);
         unbinder = ButterKnife.bind(this, view);
 
         mMerchantsRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
 //        mAdapter = new MerchantsAdapter(DataServer.getMerchants());
 //        mMerchantsRecycler.setAdapter(mAdapter);
 
-        Observable.fromCallable(this::getAllRestaurants)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .flatMap(Observable::fromIterable)
-                .map(RestaurantView::getName)
-                .subscribe(s -> {
-                            Log.d(TAG, "s = " + s);
-                            mProgressBar.setVisibility(View.GONE);
-//                            mAdapter = new MerchantsAdapter(merchants);
-                            mMerchantsRecycler.setAdapter(mAdapter);
-                        }
-                        , throwable -> Log.e(TAG, "onCreate: ", throwable));
-
-
         return view;
     }
-
-    private List<RestaurantView> getAllRestaurants() throws IOException {
-        RestaurantAPI restaurantAPI = new RestaurantAPI.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
-                .setGoogleClientRequestInitializer(clientRequest -> clientRequest.setDisableGZipContent(true))
-                .setRootUrl(ROOT_URL)
-                .build();
-
-        return restaurantAPI.getAllRestaurantsOrderedByPricing(0, 10).execute().getItems();
-    }
-
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

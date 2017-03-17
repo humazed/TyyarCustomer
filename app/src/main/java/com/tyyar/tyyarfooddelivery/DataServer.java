@@ -7,7 +7,6 @@ import com.tyyar.tyyarfooddelivery.model.Choice;
 import com.tyyar.tyyarfooddelivery.model.Item;
 import com.tyyar.tyyarfooddelivery.model.Location;
 import com.tyyar.tyyarfooddelivery.model.Merchant;
-import com.tyyar.tyyarfooddelivery.model.Marhants;
 import com.tyyar.tyyarfooddelivery.model.Option;
 import com.tyyar.tyyarfooddelivery.model.Review;
 
@@ -97,18 +96,6 @@ public class DataServer {
             add(Choice.create(id + "_2", "Additions", "Salads and pickles", 20, true, false));
             add(Choice.create(id + "_3", "Plus additions", " Toast ,Salads and pickles ", 50, true, false));
         }};
-    }
-
-    public static ArrayList<Merchant> getMerchants(List<Marhants> results) {
-        Location location = Location.create("1", 13.000, 13.1512, "outside the lala");
-
-        ArrayList<Merchant> merchants = new ArrayList<>();
-        for (Marhants result : results) {
-            merchants.add(Merchant.create(result.getId(), result.getName(), "pass", "hu@gmail.com",
-                    "011023476341", 4, result.getUrl(), "a very good resturant", 3, "12.5", "25",
-                    location, getCategories(getItems(getOptions(), result.getUrl())), getReviews()));
-        }
-        return merchants;
     }
 
     private static ArrayList<Item> getItems(ArrayList<Option> options, String url) {
