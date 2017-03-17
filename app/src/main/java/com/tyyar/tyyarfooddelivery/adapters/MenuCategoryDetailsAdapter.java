@@ -1,15 +1,16 @@
 package com.tyyar.tyyarfooddelivery.adapters;
 
 import android.content.Intent;
+import android.util.Log;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.tyyar.tyyarfooddelivery.R;
-import com.tyyar.tyyarfooddelivery.screens.OrderItemActivity;
 import com.tyyar.tyyarfooddelivery.model.Category;
 import com.tyyar.tyyarfooddelivery.model.Item;
+import com.tyyar.tyyarfooddelivery.screens.OrderItemActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,7 +40,7 @@ public class MenuCategoryDetailsAdapter extends BaseQuickAdapter<Item, BaseViewH
     @Override
     protected void convert(BaseViewHolder viewHolder, Item item) {
         ButterKnife.bind(this, viewHolder.getConvertView());
-
+        Log.d(TAG, "convert " + item);
         mItemNameTextView.setText(item.name());
         mItemPriceTextView.setText(mContext.getString(R.string.common_price, item.price()));
 

@@ -1,5 +1,6 @@
 package com.tyyar.tyyarfooddelivery.screens.home;
 
+
 import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.microsoft.windowsazure.mobileservices.MobileServiceClient;
 import com.microsoft.windowsazure.mobileservices.table.MobileServiceTable;
@@ -46,6 +48,7 @@ public class PharmacyiesFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
 
     @BindView(R.id.merchants_recycler) RecyclerView mMerchantsRecycler;
+    @BindView(R.id.progress_bar) ProgressBar mProgressBar;
 
     private Unbinder unbinder;
     private OnFragmentInteractionListener mListener;
@@ -81,7 +84,6 @@ public class PharmacyiesFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
         }
 
-
     }
 
     @Override
@@ -90,8 +92,8 @@ public class PharmacyiesFragment extends Fragment {
         unbinder = ButterKnife.bind(this, view);
 
         mMerchantsRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        mAdapter = new MerchantsAdapter(DataServer.getMerchants());
-        mMerchantsRecycler.setAdapter(mAdapter);
+//        mAdapter = new MerchantsAdapter(DataServer.getMerchants());
+//        mMerchantsRecycler.setAdapter(mAdapter);
 
         try {
             // Create the Mobile Service Client instance, using the provided
@@ -129,16 +131,9 @@ public class PharmacyiesFragment extends Fragment {
      * Refresh the list with the items in the Table
      */
     private void refreshItemsFromTable() {
-
-        // Get the items that weren't marked as completed and add them in the
-        // adapter
-
         AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... params) {
-
-                Log.d(TAG, "doInBackground out side");
-
                 try {
                     final List<Marhants> results = mMerchantsTable
                             .where()
@@ -146,11 +141,11 @@ public class PharmacyiesFragment extends Fragment {
                             .execute().get();
 
                     Log.d(TAG, "doInBackground " + results);
-                    Log.d(TAG, "doInBackground ");
 
                     ArrayList<Merchant> merchants = DataServer.getMerchants(results);
 
                     getActivity().runOnUiThread(() -> {
+                        mProgressBar.setVisibility(View.GONE);
                         mAdapter = new MerchantsAdapter(merchants);
                         mMerchantsRecycler.setAdapter(mAdapter);
                     });
@@ -159,6 +154,11 @@ public class PharmacyiesFragment extends Fragment {
                 }
 
                 return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
             }
         };
 

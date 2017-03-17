@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 import com.tyyar.tyyarfooddelivery.R;
 import com.tyyar.tyyarfooddelivery.adapters.MenuCategoriesAdapter;
@@ -30,6 +31,8 @@ public class MenuCategoriesActivity extends AppCompatActivity {
         UiUtils.showDrawer(this, mToolbar, 1);
 
         Merchant merchant = getIntent().getParcelableExtra(MerchantsAdapter.KEY_MERCHANT);
+        Log.d(TAG, "merchant = " + merchant);
+
 
         if (getSupportActionBar() != null) getSupportActionBar().setTitle(merchant.name());
 

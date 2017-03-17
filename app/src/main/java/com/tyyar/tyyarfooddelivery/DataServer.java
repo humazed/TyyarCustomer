@@ -106,9 +106,22 @@ public class DataServer {
         for (Marhants result : results) {
             merchants.add(Merchant.create(result.getId(), result.getName(), "pass", "hu@gmail.com",
                     "011023476341", 4, result.getUrl(), "a very good resturant", 3, "12.5", "25",
-                    location, getCategories(getItems(getOptions())), getReviews()));
+                    location, getCategories(getItems(getOptions(), result.getUrl())), getReviews()));
         }
         return merchants;
+    }
+
+    private static ArrayList<Item> getItems(ArrayList<Option> options, String url) {
+        return new ArrayList<Item>() {{
+            add(Item.create("1", "Neapolitan Pizza", "a very good pizza", 5.00, url, true, options));
+            add(Item.create("1", "Chicago Pizza", "a very good pizza", 2.13, url, true, options));
+            add(Item.create("1", "Sicilian Pizza", "a very good pizza", 3.14, url, true, options));
+            add(Item.create("1", "New York Style Pizza", "a very good pizza", 4.15, url, true, options));
+            add(Item.create("1", "Greek Pizza", "a very good pizza", 5.16, url, true, options));
+            add(Item.create("1", "Greek Pizza", "a very good pizza", 6.17, url, true, options));
+            add(Item.create("1", "Greek Pizza", "a very good pizza", 7.18, url, true, options));
+        }};
+
     }
 
 
