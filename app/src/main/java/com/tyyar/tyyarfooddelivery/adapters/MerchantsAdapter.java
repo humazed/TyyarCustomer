@@ -2,6 +2,7 @@ package com.tyyar.tyyarfooddelivery.adapters;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -10,8 +11,8 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.tyyar.tyyarfooddelivery.R;
+import com.tyyar.tyyarfooddelivery.model.MerchantView;
 import com.tyyar.tyyarfooddelivery.screens.MenuCategoriesActivity;
-import com.tyyar.tyyarfooddelivery.model.Merchant;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ import butterknife.ButterKnife;
  * Date: 1/27/2017
  */
 
-public class MerchantsAdapter extends BaseQuickAdapter<Merchant, BaseViewHolder> {
+public class MerchantsAdapter extends BaseQuickAdapter<MerchantView, BaseViewHolder> {
     private static final String TAG = MerchantsAdapter.class.getSimpleName();
     public static final String KEY_MERCHANT = "merchantKey";
 
@@ -36,12 +37,13 @@ public class MerchantsAdapter extends BaseQuickAdapter<Merchant, BaseViewHolder>
     @BindView(R.id.row_container) LinearLayout mRowContainer;
 
 
-    public MerchantsAdapter(List<Merchant> merchants) {
+    public MerchantsAdapter(List<MerchantView> merchants) {
         super(R.layout.row_merchant, merchants);
+        Log.d(TAG, "merchants = " + merchants);
     }
 
     @Override
-    protected void convert(BaseViewHolder viewHolder, Merchant merchant) {
+    protected void convert(BaseViewHolder viewHolder, MerchantView merchant) {
         ButterKnife.bind(this, viewHolder.getConvertView());
         Glide.with(mContext)
                 .load(Uri.parse(merchant.logoImageUrl()))

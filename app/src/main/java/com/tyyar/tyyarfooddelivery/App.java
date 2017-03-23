@@ -1,8 +1,9 @@
 package com.tyyar.tyyarfooddelivery;
 
-import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 
 import com.blankj.utilcode.utils.Utils;
+import com.squareup.leakcanary.LeakCanary;
 import com.tyyar.tyyarfooddelivery.model.CartItem;
 
 import java.util.ArrayList;
@@ -12,14 +13,21 @@ import java.util.ArrayList;
  * Date: 1/27/2017
  */
 
-public class App extends Application {
+public class App extends MultiDexApplication {
 
     private ArrayList<CartItem> mCartItems;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        LeakCanary.install(this);
 
+        // Normal app init code...
         Utils.init(this);
 
         mCartItems = new ArrayList<>();

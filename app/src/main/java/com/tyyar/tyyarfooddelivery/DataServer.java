@@ -2,11 +2,13 @@ package com.tyyar.tyyarfooddelivery;
 
 import android.support.annotation.NonNull;
 
+import com.annimon.stream.Stream;
 import com.tyyar.tyyarfooddelivery.model.Category;
 import com.tyyar.tyyarfooddelivery.model.Choice;
 import com.tyyar.tyyarfooddelivery.model.Item;
 import com.tyyar.tyyarfooddelivery.model.Location;
 import com.tyyar.tyyarfooddelivery.model.Merchant;
+import com.tyyar.tyyarfooddelivery.model.MerchantView;
 import com.tyyar.tyyarfooddelivery.model.Option;
 import com.tyyar.tyyarfooddelivery.model.Review;
 
@@ -38,6 +40,15 @@ public class DataServer {
             add(Merchant.create("9", "Burger king", "pass", "hu@gmail.com", "01110000011", 3, "file:///android_asset/e9yo_sqp.png", "a very good resturant", 2, "12", "12.5", location, categories, reviews));
         }};
     }
+
+    public static List<MerchantView> getMerchantsView() {
+        List<Merchant> merchants = getMerchants();
+
+        return Stream.of(merchants)
+                .map(m -> MerchantView.create(m._ID(), m.name(), 3, m.logoImageUrl(), "", 3, "2.22", "25"))
+                .toList();
+    }
+
 
     @NonNull
     private static ArrayList<Review> getReviews() {
