@@ -37,4 +37,8 @@ public abstract class Item implements Parcelable, BaseItem {
     public void setSelected(boolean selected) {
         this.selected = selected;
     }
+
+    /*public static Category map(com.appspot.tayyar_trial.restaurantAPI.model.Item i) {
+        return Item.create(i.getId(),i.getName(),"description",i.);
+    }*/
 }

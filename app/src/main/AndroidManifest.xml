@@ -32,17 +32,21 @@
         <activity
             android:name=".screens.CheckoutActivity"
             android:label="@string/checkout_activity_label"/>
-
         <activity android:name=".screens.OrdersHistoryActivity"/>
         <activity android:name=".screens.AccountActivity"/>
         <activity android:name=".screens.SearchMerchantsActivity">
         </activity>
-        <activity android:name=".screens.GAETestActivity">
+        <activity android:name=".screens.intro.IntroActivity">
         </activity>
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version"/>
 
+        <activity
+            android:name=".screens.intro.login_and_signup.LoginAndSignupActivity"
+            android:label="@string/title_activity_login_and_signup">
+        </activity>
     </application>
+
 </manifest>

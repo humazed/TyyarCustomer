@@ -15,6 +15,7 @@ import android.widget.Spinner;
 
 import com.tyyar.tyyarfooddelivery.R;
 import com.tyyar.tyyarfooddelivery.screens.SearchMerchantsActivity;
+import com.tyyar.tyyarfooddelivery.screens.intro.login_and_signup.LoginAndSignupActivity;
 import com.tyyar.tyyarfooddelivery.utils.UiUtils;
 
 import butterknife.BindView;
@@ -42,6 +43,11 @@ public class HomeActivity extends AppCompatActivity {
         mMenuSearch.setOnClickListener(v -> startActivity(new Intent(this, SearchMerchantsActivity.class)));
         mContainer.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
         mTabLayout.setupWithViewPager(mContainer);
+
+        Object reg = null;
+        if (reg == null) {
+            startActivity(new Intent(this, LoginAndSignupActivity.class));
+        }
 
     }
 

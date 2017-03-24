@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/address_wrapper"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16.0dip"
+        android:hint="@string/street_address"
+        android:paddingLeft="16.0dip"
+        android:paddingRight="16.0dip"
+        android:paddingTop="24.0dip">
+
+        <AutoCompleteTextView
+            android:id="@+id/edit_address"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12.0dip"
+            android:paddingTop="12.0dip"
+            android:popupBackground="@color/white"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <RelativeLayout
+        android:id="@+id/action_button"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/dd_button_red_flat"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/actionButtonTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/save_address"
+            android:textColor="@color/white"
+            android:textSize="16.0dip"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+</RelativeLayout>

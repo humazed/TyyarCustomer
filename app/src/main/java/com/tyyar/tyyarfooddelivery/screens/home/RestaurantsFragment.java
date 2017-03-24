@@ -78,15 +78,16 @@ public class RestaurantsFragment extends Fragment {
                 .observeOn(AndroidSchedulers.mainThread())
                 .retry(5)
                 .flatMap(Observable::fromIterable)
-                .map(rv -> MerchantView.create("rv.getRestaurantID()", rv.getName(), 3, rv.getImageURL(), "", 3, "2.22", "25"))
+                .map(rv -> MerchantView.create(rv.getRestaurantID(), rv.getName(), 3, rv.getImageURL(), "", 3, "2.22", "25"))
                 .toList()
                 .subscribe(merchantViewList -> {
                             Log.d(TAG, "merchantView = " + merchantViewList);
-                            mProgressBar.setVisibility(View.GONE);
+                            mProgressBar.setVisibility(View.VISIBLE);
                             mAdapter = new MerchantsAdapter(merchantViewList);
                             mMerchantsRecycler.setAdapter(mAdapter);
                         }
                         , throwable -> Log.e(TAG, "onCreate: ", throwable));
+
 
         return view;
     }

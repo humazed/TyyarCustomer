@@ -20,4 +20,7 @@ public abstract class Category implements Parcelable, BaseItem {
     public static Category create(String _ID, String name, ArrayList<Item> items) {return new AutoValue_Category(_ID, name, items);}
 
 
+    /*public static Category map(com.appspot.tayyar_trial.restaurantAPI.model.Category c) {
+        return Category.create(c.getId(), c.getName(), c.getItems());
+    }*/
 }

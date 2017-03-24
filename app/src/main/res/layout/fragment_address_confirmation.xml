@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/refine_address_view"
+        android:layout_width="fill_parent"
+        android:layout_height="160.0dip"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:id="@+id/refine_address_toast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/refine_address_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16.0dip"
+        android:layout_marginRight="3.0dip"
+        android:background="@drawable/toast_background"
+        android:paddingLeft="16.0dip"
+        android:paddingRight="16.0dip"
+        android:text="Click here to refine your location"
+        android:textColor="@color/white"
+        android:textSize="14.0sp"/>
+
+    <TextView
+        android:id="@+id/street_address_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/refine_address_view"
+        android:layout_marginTop="16.0dip"
+        android:paddingLeft="16.0dip"
+        android:paddingRight="16.0dip"
+        android:text="@string/street_address"
+        android:textColor="@color/gray"
+        android:textSize="14.0sp"/>
+
+    <TextView
+        android:id="@+id/street_address_textview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/street_address_label"
+        android:paddingLeft="16.0dip"
+        android:paddingRight="16.0dip"
+        android:textColor="@color/black"
+        android:textSize="18.0sp"/>
+
+    <TextView
+        android:id="@+id/address_detail_textview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/street_address_textview"
+        android:layout_marginTop="4.0dip"
+        android:gravity="left"
+        android:paddingLeft="16.0dip"
+        android:paddingRight="16.0dip"
+        android:textAllCaps="true"
+        android:textColor="@color/gray"
+        android:textSize="16.0sp"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/apartment_number_wrapper"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/address_detail_textview"
+        android:layout_marginTop="16.0dip"
+        android:hint="@string/apartment_number_optional"
+        android:textColorHint="@color/DD_MEDIUM_GRAY">
+
+        <EditText
+            android:id="@+id/edit_apartment_number"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/apartment_number_wrapper"
+            android:layout_marginLeft="16.0dip"
+            android:layout_marginRight="16.0dip"
+            android:layout_marginTop="12.0dip"
+            android:imeOptions="actionDone"
+            android:lines="1"
+            android:paddingBottom="12.0dip"
+            android:paddingTop="12.0dip"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/dasher_notes_wrapper"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/apartment_number_wrapper"
+        android:layout_marginLeft="16.0dip"
+        android:layout_marginRight="16.0dip"
+        android:layout_marginTop="16.0dip"
+        android:hint="@string/dasher_notes_optional"
+        android:textColorHint="@color/DD_MEDIUM_GRAY">
+
+        <EditText
+            android:id="@+id/edit_dasher_notes"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12.0dip"
+            android:imeOptions="actionDone"
+            android:nextFocusLeft="@id/edit_dasher_notes"
+            android:nextFocusUp="@id/edit_dasher_notes"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/action_button"
+        android:layout_width="fill_parent"
+        android:layout_height="48.0dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/dd_button_red_flat"
+        android:gravity="center"
+        android:text="@string/save_address"
+        android:textColor="@color/white"
+        android:textSize="16.0dip"
+        android:textStyle="bold"/>
+</RelativeLayout>
