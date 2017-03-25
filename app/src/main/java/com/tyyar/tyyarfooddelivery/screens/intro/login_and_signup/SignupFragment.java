@@ -7,39 +7,39 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.tyyar.tyyarfooddelivery.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link SignupFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link SignupFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 public class SignupFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String TAG = SignupFragment.class.getSimpleName();
     private static final String ARG_PARAM1 = "param1";
 
-    // TODO: Rename and change types of parameters
+
+    @BindView(R.id.facebook_login_button) LinearLayout mFacebookLoginButton;
+    @BindView(R.id.continue_with_email_text) TextView mContinueWithEmailText;
+    @BindView(R.id.first_name_editText) EditText mFirstNameEditText;
+    @BindView(R.id.last_name_editText) EditText mLastNameEditText;
+    @BindView(R.id.email_editText) EditText mEmailEditText;
+    @BindView(R.id.phone_number_editText) EditText mPhoneNumberEditText;
+    @BindView(R.id.password_editText) EditText mPasswordEditText;
+    @BindView(R.id.register_button) Button mRegisterButton;
+
+    Unbinder unbinder;
+
     private String mParam1;
 
     private OnFragmentInteractionListener mListener;
 
-    public SignupFragment() {
-        // Required empty public constructor
-    }
+    public SignupFragment() { /*Required empty public constructor*/ }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @return A new instance of fragment SignupFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static SignupFragment newInstance(String param1) {
         SignupFragment fragment = new SignupFragment();
         Bundle args = new Bundle();
@@ -57,10 +57,15 @@ public class SignupFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_signup, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_signup, container, false);
+        unbinder = ButterKnife.bind(this, view);
+
+        mFacebookLoginButton.setOnClickListener(v -> {
+
+        });
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -85,6 +90,12 @@ public class SignupFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
 
     /**

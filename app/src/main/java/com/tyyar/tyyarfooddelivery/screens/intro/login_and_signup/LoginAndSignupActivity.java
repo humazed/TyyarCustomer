@@ -2,6 +2,7 @@ package com.tyyar.tyyarfooddelivery.screens.intro.login_and_signup;
 
 
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,18 +15,24 @@ import android.view.MenuItem;
 
 import com.tyyar.tyyarfooddelivery.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class LoginAndSignupActivity extends AppCompatActivity {
+
+    @BindView(R.id.toolbar) Toolbar mToolbar;
+    @BindView(R.id.tabs) TabLayout mTabs;
+    @BindView(R.id.container) ViewPager mContainer;
+    @BindView(R.id.main_content) CoordinatorLayout mMainContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_and_signup);
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-        // Set up the ViewPager with the sections adapter.
-        ViewPager viewPager = (ViewPager) findViewById(R.id.container);
-        viewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
-        ((TabLayout) findViewById(R.id.tabs)).setupWithViewPager(viewPager);
-
+        ButterKnife.bind(this);
+        setSupportActionBar(mToolbar);
+        mContainer.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
+        mTabs.setupWithViewPager(mContainer);
 
 
     }

@@ -28,14 +28,16 @@
     <string name="driver_tip_title">Driver Tip \t</string>
     <!--CheckoutActivity end-->
 
+    <!--LoginAndSignupActivity start-->
+    <string name="title_activity_login_and_signup">Account</string>
+
+    <!--LoginAndSignupActivity end-->
 
     <string name="date_time">%1$s, %2$s</string>
     <string name="messenger_send_button_text">Send</string>
     <string name="preposition_for_date">on %s</string>
     <string name="preposition_for_time">at %s</string>
     <string name="relative_time">%1$s, %2$s</string>
-    <string name="search_menu_title">Search</string>
-    <string name="status_bar_notification_info_overflow">999+</string>
     <string name="wallet_buy_button_place_holder">Buy with Google</string>
     <string name="attachment_download_failed_message">Failed to download. Tap to retry.</string>
     <string name="attachment_open_error_message">"Can't open attachment."</string>
@@ -188,7 +190,6 @@
     <string name="change_address">Change Address</string>
     <string name="change_address_success">Address changed to %s</string>
     <string name="change_your_password_here">change your password here</string>
-    <string name="character_counter_pattern">%1$d / %2$d</string>
     <string name="checkout_button_text">Checkout</string>
     <string name="checkout_title">Checkout: %s</string>
     <string name="consumer_id">Consumer ID</string>
@@ -286,7 +287,7 @@
     <string name="feedback_request">Would you mind giving us feedback?</string>
     <string name="feedback_send_failed">Error sending message</string>
     <string name="file_provider_authority">com.dd.doordash.fileprovider</string>
-    <string name="firstname">First name</string>
+    <string name="first_name">First name</string>
     <string name="forgot_password">" "<u>Forgot your password?</u>" "</string>
     <string name="free">Free</string>
     <string name="free_delivery">Free delivery</string>
@@ -301,7 +302,7 @@
     <string name="invitations_sent">Invitations Sent!</string>
     <string name="item_added">Item added successfully!</string>
     <string name="item_updated">Item updated successfully.</string>
-    <string name="lastname">Last name</string>
+    <string name="last_name">Last name</string>
     <string name="leave_feedback_high_rating_header">Glad you had a great delivery!</string>
     <string name="leave_feedback_high_rating_hint">What made your delivery delightful?</string>
     <string name="leave_feedback_medium_rating_header">How could your delivery have been more delightful?</string>
@@ -548,7 +549,6 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_login_and_signup">LoginAndSignupActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
 </resources>
