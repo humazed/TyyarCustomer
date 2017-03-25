@@ -15,10 +15,14 @@ import android.widget.Spinner;
 
 import com.tyyar.tyyarfooddelivery.R;
 import com.tyyar.tyyarfooddelivery.screens.SearchMerchantsActivity;
+import com.tyyar.tyyarfooddelivery.screens.intro.IntroActivity;
 import com.tyyar.tyyarfooddelivery.utils.UiUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.tyyar.tyyarfooddelivery.screens.intro.IntroActivity.KEY_FROM_INTRO;
+import static com.tyyar.tyyarfooddelivery.screens.intro.login_and_signup.SignupFragment.KEY_FROM_SIGNUP;
 
 /**
  * MainActivity
@@ -43,11 +47,10 @@ public class HomeActivity extends AppCompatActivity {
         mContainer.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
         mTabLayout.setupWithViewPager(mContainer);
 
-/*
-        if (getIntent() == null) {
+        if (!(getIntent().getBooleanExtra(KEY_FROM_INTRO, false) ||
+                getIntent().getBooleanExtra(KEY_FROM_SIGNUP, false))) {
             startActivity(new Intent(this, IntroActivity.class));
         }
-*/
 
     }
 

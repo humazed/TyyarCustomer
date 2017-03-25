@@ -30,10 +30,11 @@ import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
+import static com.tyyar.tyyarfooddelivery.utils.Constants.ROOT_URL;
+
 public class RestaurantsFragment extends Fragment {
     private static final String TAG = RestaurantsFragment.class.getSimpleName();
     private static final String ARG_PARAM1 = "param1";
-    public static final String ROOT_URL = "https://tayyar-trial.appspot.com/_ah/api/";
 
     @BindView(R.id.merchants_recycler) RecyclerView mMerchantsRecycler;
     @BindView(R.id.progress_bar) ProgressBar mProgressBar;
@@ -95,6 +96,7 @@ public class RestaurantsFragment extends Fragment {
     private List<RestaurantView> getAllRestaurants() throws IOException {
         RestaurantAPI restaurantAPI = new RestaurantAPI.Builder(new OkHttpTransport(), new AndroidJsonFactory(), null)
                 .setGoogleClientRequestInitializer(clientRequest -> clientRequest.setDisableGZipContent(true))
+//                .setRootUrl(LOCAl_HOST_URL)
                 .setRootUrl(ROOT_URL)
                 .build();
 

@@ -17,6 +17,7 @@ import butterknife.ButterKnife;
 
 public class IntroActivity extends AppCompatActivity {
     private static final String TAG = IntroActivity.class.getSimpleName();
+    public static final String KEY_FROM_INTRO = "from_intro";
 
     @BindView(R.id.logo_imageView) ImageView mLogoImageView;
     @BindView(R.id.pager) ViewPager mPager;
@@ -31,7 +32,12 @@ public class IntroActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mLoginButton.setOnClickListener(v -> startActivity(new Intent(this, LoginAndSignupActivity.class)));
-        mGetStartedButton.setOnClickListener(v -> startActivity(new Intent(this, HomeActivity.class)));
+
+        mGetStartedButton.setOnClickListener(v -> {
+            Intent intent = new Intent(this, HomeActivity.class);
+            intent.putExtra(KEY_FROM_INTRO, true);
+            startActivity(intent);
+        });
 
 
     }

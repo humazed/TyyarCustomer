@@ -24,7 +24,7 @@ import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
-import static com.tyyar.tyyarfooddelivery.screens.home.RestaurantsFragment.ROOT_URL;
+import static com.tyyar.tyyarfooddelivery.utils.Constants.ROOT_URL;
 
 public class MenuCategoriesActivity extends AppCompatActivity {
     private static final String TAG = MenuCategoriesActivity.class.getSimpleName();
