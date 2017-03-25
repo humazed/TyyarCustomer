@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.tyyar.tyyarfooddelivery.R;
@@ -22,14 +23,13 @@ public class LoginFragment extends Fragment {
     private static final String TAG = LoginFragment.class.getSimpleName();
     private static final String ARG_PARAM1 = "param1";
 
-
+    Unbinder unbinder;
     @BindView(R.id.facebook_login_button) LinearLayout mFacebookLoginButton;
     @BindView(R.id.email_editText) EditText mEmailEditText;
     @BindView(R.id.password_editText) EditText mPasswordEditText;
     @BindView(R.id.forgot_password_link) TextView mForgotPasswordLink;
     @BindView(R.id.login_button) Button mLoginButton;
-
-    Unbinder unbinder;
+    @BindView(R.id.progressBar) ProgressBar mProgressBar;
 
     private String mParam1;
 
@@ -59,7 +59,7 @@ public class LoginFragment extends Fragment {
         unbinder = ButterKnife.bind(this, view);
 
         mLoginButton.setOnClickListener(v -> {
-
+            mProgressBar.setVisibility(View.VISIBLE);
 
         });
 
