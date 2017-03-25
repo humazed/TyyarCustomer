@@ -122,9 +122,11 @@
     <orderEntry type="library" exported="" name="notification-hubs-android-sdk-0.4" level="project" />
     <orderEntry type="library" exported="" name="firebase-common-10.2.1" level="project" />
     <orderEntry type="library" exported="" name="play-services-gcm-10.2.1" level="project" />
+    <orderEntry type="library" exported="" name="rxlifecycle-components-2.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-compat-25.3.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-25.3.0" level="project" />
     <orderEntry type="library" exported="" name="support-media-compat-25.3.0" level="project" />
+    <orderEntry type="library" exported="" name="rxlifecycle-android-2.0.1" level="project" />
     <orderEntry type="library" exported="" name="butterknife-annotations-8.4.0" level="project" />
     <orderEntry type="library" exported="" name="butterknife-8.4.0" level="project" />
     <orderEntry type="library" exported="" name="azure-notifications-handler-1.0.1" level="project" />
@@ -140,7 +142,6 @@
     <orderEntry type="library" exported="" name="firebase-iid-10.2.1" level="project" />
     <orderEntry type="library" exported="" name="glide-3.7.0" level="project" />
     <orderEntry type="library" exported="" name="support-core-utils-25.3.0" level="project" />
-    <orderEntry type="library" exported="" name="jsr305-2.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-fragment-25.3.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="rules-0.5" level="project" />
     <orderEntry type="library" exported="" name="google-api-client-1.21.0" level="project" />
@@ -178,6 +179,7 @@
     <orderEntry type="library" exported="" scope="TEST" name="leakcanary-android-no-op-1.5" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-25.3.0" level="project" />
     <orderEntry type="library" exported="" name="firebase-analytics-10.2.1" level="project" />
+    <orderEntry type="library" exported="" name="jsr305-3.0.1" level="project" />
     <orderEntry type="library" exported="" name="constraint-layout-1.0.2" level="project" />
     <orderEntry type="library" exported="" name="play-services-tasks-10.2.1" level="project" />
     <orderEntry type="library" exported="" name="fastadapter-2.1.0" level="project" />
@@ -188,6 +190,7 @@
     <orderEntry type="library" exported="" name="android-maps-utils-0.4.4" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="espresso-core-2.2.2" level="project" />
     <orderEntry type="library" exported="" name="stream-1.1.6" level="project" />
+    <orderEntry type="library" exported="" name="rxlifecycle-2.0.1" level="project" />
     <orderEntry type="library" exported="" name="constraint-layout-solver-1.0.2" level="project" />
     <orderEntry type="library" exported="" name="gson-2.3" level="project" />
     <orderEntry type="library" exported="" name="firebase-analytics-impl-10.2.1" level="project" />

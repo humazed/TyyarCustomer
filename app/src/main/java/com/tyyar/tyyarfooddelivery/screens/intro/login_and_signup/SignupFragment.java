@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +17,7 @@ import android.widget.TextView;
 import com.appspot.tayyar_trial.restaurantAPI.RestaurantAPI;
 import com.appspot.tayyar_trial.restaurantAPI.model.Customer;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
+import com.trello.rxlifecycle2.components.support.RxFragment;
 import com.tyyar.tyyarfooddelivery.R;
 import com.tyyar.tyyarfooddelivery.screens.home.HomeActivity;
 import com.tyyar.tyyarfooddelivery.utils.okhttp_transport.OkHttpTransport;
@@ -33,11 +33,10 @@ import io.reactivex.schedulers.Schedulers;
 
 import static com.tyyar.tyyarfooddelivery.utils.Constants.ROOT_URL;
 
-public class SignupFragment extends Fragment {
+public class SignupFragment extends RxFragment {
     private static final String TAG = SignupFragment.class.getSimpleName();
     private static final String ARG_PARAM1 = "param1";
     public static final String KEY_FROM_SIGNUP = "from_signup";
-
 
     Unbinder unbinder;
     @BindView(R.id.facebook_login_button) LinearLayout mFacebookLoginButton;
@@ -86,6 +85,7 @@ public class SignupFragment extends Fragment {
             Single.fromCallable(this::createCustomer)
                     .subscribeOn(Schedulers.newThread())
                     .observeOn(AndroidSchedulers.mainThread())
+                    .compose(bindToLifecycle())
                     .subscribe(customer -> {
                                 Log.d(TAG, "customer = " + customer);
                                 Intent intent = new Intent(getActivity(), HomeActivity.class);

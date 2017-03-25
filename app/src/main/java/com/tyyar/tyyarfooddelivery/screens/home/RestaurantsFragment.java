@@ -3,7 +3,6 @@ package com.tyyar.tyyarfooddelivery.screens.home;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -15,6 +14,7 @@ import android.widget.ProgressBar;
 import com.appspot.tayyar_trial.restaurantAPI.RestaurantAPI;
 import com.appspot.tayyar_trial.restaurantAPI.model.RestaurantView;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
+import com.trello.rxlifecycle2.components.support.RxFragment;
 import com.tyyar.tyyarfooddelivery.R;
 import com.tyyar.tyyarfooddelivery.adapters.MerchantsAdapter;
 import com.tyyar.tyyarfooddelivery.model.MerchantView;
@@ -32,20 +32,19 @@ import io.reactivex.schedulers.Schedulers;
 
 import static com.tyyar.tyyarfooddelivery.utils.Constants.ROOT_URL;
 
-public class RestaurantsFragment extends Fragment {
+public class RestaurantsFragment extends RxFragment {
     private static final String TAG = RestaurantsFragment.class.getSimpleName();
     private static final String ARG_PARAM1 = "param1";
 
+    private Unbinder unbinder;
     @BindView(R.id.merchants_recycler) RecyclerView mMerchantsRecycler;
     @BindView(R.id.progress_bar) ProgressBar mProgressBar;
 
-    private Unbinder unbinder;
     private OnFragmentInteractionListener mListener;
 
     private MerchantsAdapter mAdapter;
 
     private String mParam1;
-
 
     public RestaurantsFragment() { /* Required empty public constructor */ }
 
@@ -77,6 +76,7 @@ public class RestaurantsFragment extends Fragment {
         Observable.fromCallable(this::getAllRestaurants)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
+                .compose(bindToLifecycle())
 //                .retry(5)
                 .flatMap(Observable::fromIterable)
                 .map(rv -> MerchantView.create(rv.getRestaurantID(), rv.getName(), 3, rv.getImageURL(), "", 3, "2.22", "25"))
