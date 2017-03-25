@@ -15,10 +15,10 @@ import android.widget.ProgressBar;
 import com.appspot.tayyar_trial.restaurantAPI.RestaurantAPI;
 import com.appspot.tayyar_trial.restaurantAPI.model.RestaurantView;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
-import com.google.api.client.http.javanet.NetHttpTransport;
 import com.tyyar.tyyarfooddelivery.R;
 import com.tyyar.tyyarfooddelivery.adapters.MerchantsAdapter;
 import com.tyyar.tyyarfooddelivery.model.MerchantView;
+import com.tyyar.tyyarfooddelivery.utils.okhttp_transport.OkHttpTransport;
 
 import java.io.IOException;
 import java.util.List;
@@ -76,13 +76,13 @@ public class RestaurantsFragment extends Fragment {
         Observable.fromCallable(this::getAllRestaurants)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .retry(5)
+//                .retry(5)
                 .flatMap(Observable::fromIterable)
                 .map(rv -> MerchantView.create(rv.getRestaurantID(), rv.getName(), 3, rv.getImageURL(), "", 3, "2.22", "25"))
                 .toList()
                 .subscribe(merchantViewList -> {
                             Log.d(TAG, "merchantView = " + merchantViewList);
-                            mProgressBar.setVisibility(View.VISIBLE);
+                            mProgressBar.setVisibility(View.GONE);
                             mAdapter = new MerchantsAdapter(merchantViewList);
                             mMerchantsRecycler.setAdapter(mAdapter);
                         }
@@ -93,7 +93,7 @@ public class RestaurantsFragment extends Fragment {
     }
 
     private List<RestaurantView> getAllRestaurants() throws IOException {
-        RestaurantAPI restaurantAPI = new RestaurantAPI.Builder(new NetHttpTransport(), new AndroidJsonFactory(), null)
+        RestaurantAPI restaurantAPI = new RestaurantAPI.Builder(new OkHttpTransport(), new AndroidJsonFactory(), null)
                 .setGoogleClientRequestInitializer(clientRequest -> clientRequest.setDisableGZipContent(true))
                 .setRootUrl(ROOT_URL)
                 .build();
